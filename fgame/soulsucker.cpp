@@ -52,10 +52,11 @@ Event EV_Soulsucker_WaterFactor
    "Factor by which to scale the amount of water the player gets from shooting the gun"
    );
 
-
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Weapon, Soulsucker, NULL )
 	{
-      { &EV_Soulsucker_WaterFactor,    WaterFactor },
+		//{ &EV_Soulsucker_WaterFactor,	WaterFactor },
+		{ &EV_Soulsucker_WaterFactor,	&WaterFactor },
 		{ NULL, NULL }
 	};
 

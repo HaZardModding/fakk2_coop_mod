@@ -245,11 +245,13 @@ void CreateExplosion
 by using the '::' notation.
 ******************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Trigger, Exploder, "func_exploder" )
 	{
-		{ &EV_Touch,				         NULL },
-		{ &EV_Trigger_Effect,	         MakeExplosion },
-      { &EV_Exploder_SetDmg,	         SetDmg },
+		//{ &EV_Trigger_Effect, MakeExplosion },
+		{ &EV_Touch,					NULL },
+		{ &EV_Trigger_Effect,			&MakeExplosion },
+		{ &EV_Exploder_SetDmg,			&SetDmg },
 		{ NULL, NULL }
 	};
 
@@ -312,14 +314,15 @@ by using the '::' notation.
 
 ******************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Trigger, MultiExploder, "func_multi_exploder" )
 	{
-		{ &EV_Touch,				         NULL },
-		{ &EV_Trigger_Effect,	         MakeExplosion },
-      { &EV_Exploder_SetDmg,	         SetDmg },
-      { &EV_Exploder_SetDuration,      SetDuration },
-      { &EV_Exploder_SetWait,	         SetWait },
-      { &EV_Exploder_SetRandom,	      SetRandom },
+		{ &EV_Touch,				        NULL },
+		{ &EV_Trigger_Effect,				&MakeExplosion },
+		{ &EV_Exploder_SetDmg,				&SetDmg },
+		{ &EV_Exploder_SetDuration,			&SetDuration },
+		{ &EV_Exploder_SetWait,				&SetWait },
+		{ &EV_Exploder_SetRandom,			&SetRandom },
 		{ NULL, NULL }
 	};
 
@@ -550,14 +553,15 @@ Event EV_ExplodeObject_SetDebrisAmount
    "How much debris to spawn each time."
 	);
 
-
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( MultiExploder, ExplodeObject, "func_explodeobject" )
 	{
-		{ &EV_Touch,				               NULL },
-		{ &EV_Trigger_Effect,	               MakeExplosion },
-		{ &EV_ExplodeObject_SetSeverity,       SetSeverity },
-		{ &EV_ExplodeObject_SetDebrisModel,    SetDebrisModel },
-		{ &EV_ExplodeObject_SetDebrisAmount,   SetDebrisAmount },
+		//{ &EV_Trigger_Effect,					MakeExplosion },
+		{ &EV_Touch, NULL },
+		{ &EV_Trigger_Effect,					&MakeExplosion },
+		{ &EV_ExplodeObject_SetSeverity,		&SetSeverity },
+		{ &EV_ExplodeObject_SetDebrisModel,		&SetDebrisModel },
+		{ &EV_ExplodeObject_SetDebrisAmount,	&SetDebrisAmount },
 		{ NULL, NULL }
 	};
 

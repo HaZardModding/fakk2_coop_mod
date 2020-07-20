@@ -253,18 +253,18 @@ Event EV_Fulcrum_SetMoveSound
    "Sound played when fulcrum is moving."
    );
 
-
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( ScriptSlave, Fulcrum, "func_fulcrum" )
 	{
-      { &EV_Fulcrum_SetSpeed,       SetSpeed },
-      { &EV_Fulcrum_Reset,          Reset },
-      { &EV_Fulcrum_AdjustFulcrum,  Adjust },
-      { &EV_Touch,                  Touched },
-      { &EV_Fulcrum_SetResetSpeed,  SetResetSpeed },
-      { &EV_Fulcrum_SetDampening,   SetDampening },
-      { &EV_Fulcrum_SetLimit,       SetLimit },
-      { &EV_Fulcrum_Setup,          Setup },
-      { &EV_Fulcrum_SetMoveSound,   SetMoveSound },
+		{ &EV_Fulcrum_SetSpeed, &SetSpeed },
+		{ &EV_Fulcrum_Reset,			&Reset },
+		{ &EV_Fulcrum_AdjustFulcrum,	&Adjust },
+		{ &EV_Touch,					&Touched },
+		{ &EV_Fulcrum_SetResetSpeed,	&SetResetSpeed },
+		{ &EV_Fulcrum_SetDampening,		&SetDampening },
+		{ &EV_Fulcrum_SetLimit,			&SetLimit },
+		{ &EV_Fulcrum_Setup,			&Setup },
+		{ &EV_Fulcrum_SetMoveSound,		&SetMoveSound },
 		{ NULL, NULL }
 	};
 
@@ -565,16 +565,17 @@ Event EV_RunThrough_SetOffset
    "When triggered, what to offset the spawned object by."
    );
 
-
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Entity, RunThrough, "func_runthrough" )
 	{
-      { &EV_RunThrough_SetSpeed,       SetSpeed },
-      { &EV_RunThrough_SetDelay,       SetDelay },
-      { &EV_RunThrough_SetChance,      SetChance },
-      { &EV_RunThrough_SetLip,         SetLip },
-      { &EV_RunThrough_SetSpawnModel,  SetSpawnModel },
-      { &EV_RunThrough_SetOffset,      SetOffset },
-      { &EV_Touch,                     Touched },
+		//{ &EV_RunThrough_SetSpeed,		SetSpeed },
+		{ &EV_RunThrough_SetSpeed,			&SetSpeed },
+		{ &EV_RunThrough_SetDelay,			&SetDelay },
+		{ &EV_RunThrough_SetChance,			&SetChance },
+		{ &EV_RunThrough_SetLip,			&SetLip },
+		{ &EV_RunThrough_SetSpawnModel,		&SetSpawnModel },
+		{ &EV_RunThrough_SetOffset,			&SetOffset },
+		{ &EV_Touch,						&Touched },
 		{ NULL, NULL }
 	};
 
@@ -868,24 +869,25 @@ Event EV_SinkObject_MakeNonActive
    "make the SinkObject not active, so that it won't respond to players touching it."
    );
 
-
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( ScriptSlave, SinkObject, "func_sinkobject" )
 	{
-      { &EV_SinkObject_SetSpeed,          SetSpeed },
-      { &EV_SinkObject_SetDelay,          SetDelay },
-      { &EV_SinkObject_Reset,             Reset },
-      { &EV_SinkObject_AdjustSinkObject,  Adjust },
-      { &EV_SinkObject_Fall,              Fall },
-      { &EV_Touch,                        Touched },
-      { &EV_SinkObject_SetResetSpeed,     SetResetSpeed },
-      { &EV_SinkObject_SetDampening,      SetDampening },
-      { &EV_SinkObject_SetLimit,          SetLimit },
-      { &EV_SinkObject_Setup,             Setup },
-      { &EV_SinkObject_SetResetDelay,     SetResetDelay },
-      { &EV_SinkObject_SetResetSound,     SetResetSound },
-      { &EV_SinkObject_SetSinkSound,      SetSinkSound },
-      { &EV_SinkObject_MakeActive,        MakeActive },
-      { &EV_SinkObject_MakeNonActive,     MakeNonActive },
+		//{ &EV_SinkObject_SetSpeed,				SetSpeed },
+		{ &EV_SinkObject_SetSpeed,					&SetSpeed },
+		{ &EV_SinkObject_SetDelay,					&SetDelay },
+		{ &EV_SinkObject_Reset,						&Reset },
+		{ &EV_SinkObject_AdjustSinkObject,			&Adjust },
+		{ &EV_SinkObject_Fall,						&Fall },
+		{ &EV_Touch,								&Touched },
+		{ &EV_SinkObject_SetResetSpeed,				&SetResetSpeed },
+		{ &EV_SinkObject_SetDampening,				&SetDampening },
+		{ &EV_SinkObject_SetLimit,					&SetLimit },
+		{ &EV_SinkObject_Setup,						&Setup },
+		{ &EV_SinkObject_SetResetDelay,				&SetResetDelay },
+		{ &EV_SinkObject_SetResetSound,				&SetResetSound },
+		{ &EV_SinkObject_SetSinkSound,				&SetSinkSound },
+		{ &EV_SinkObject_MakeActive,				&MakeActive },
+		{ &EV_SinkObject_MakeNonActive,				&MakeNonActive },
 		{ NULL, NULL }
 	};
 

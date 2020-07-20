@@ -253,20 +253,21 @@ Event EV_NewAnim
    "Start a new animation, not for script use."
    );
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Entity, Animate, "animate" )
 	{
-      { &EV_Anim,             Legs_AnimEvent },
-		{ &EV_SetFrame,			Legs_SetFrameEvent },
-		{ &EV_AnimDone,			Legs_AnimDoneEvent },
-		{ &EV_StopAnimating,		Legs_StopAnimating },
-		{ &EV_FrameDelta,			FrameDeltaEvent },
-      { &EV_NewAnim,          NewAnimEvent },
+      //{ &EV_Anim,             Legs_AnimEvent },
+		{ &EV_Anim, &Legs_AnimEvent },
+		{ &EV_SetFrame,			&Legs_SetFrameEvent },
+		{ &EV_AnimDone,			&Legs_AnimDoneEvent },
+		{ &EV_StopAnimating,	&Legs_StopAnimating },
+		{ &EV_FrameDelta,		&FrameDeltaEvent },
+		{ &EV_NewAnim,			&NewAnimEvent },
 
-      { &EV_Torso_Anim,       Torso_AnimEvent },
-		{ &EV_Torso_SetFrame,	Torso_SetFrameEvent },
-		{ &EV_Torso_AnimDone,	Torso_AnimDoneEvent },
-		{ &EV_Torso_StopAnimating,Torso_StopAnimating },
-
+		{ &EV_Torso_Anim,				&Torso_AnimEvent },
+		{ &EV_Torso_SetFrame,			&Torso_SetFrameEvent },
+		{ &EV_Torso_AnimDone,			&Torso_AnimDoneEvent },
+		{ &EV_Torso_StopAnimating,		&Torso_StopAnimating },
 		{ NULL, NULL }
 	};
 

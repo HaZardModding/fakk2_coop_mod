@@ -56,13 +56,14 @@ Event EV_Rope_RopeShader
    "Set the shader to use on the rope."
    );
 
-
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( ScriptSlave, Rope, "func_rope" )
 {
-   { &EV_Touch,             Touch },
-   { &EV_Rope_Setup,        Setup },
-   { &EV_Rope_Think,        RopeThink },
-   { NULL, NULL }
+   //{ &EV_Touch,				Touch },
+	{ &EV_Touch,				&Touch },
+	{ &EV_Rope_Setup,			&Setup },
+	{ &EV_Rope_Think,			&RopeThink },
+	{ NULL, NULL }
 };
 
 Rope::Rope()
@@ -745,16 +746,18 @@ Event EV_RopePiece_AttachModel
    "Attach the specified model the this piece of rope"
    );
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( ScriptSlave, RopePiece, "func_rope_piece" )
 {
-   { &EV_RopePiece_Setup,        Setup },
-   { &EV_Activate,               PieceTriggered },
-   { &EV_RopePiece_WiggleTime,   SetWiggleTime },
-   { &EV_RopePiece_WiggleMove,   SetWiggleMove },
-   { &EV_RopePiece_Damage,       SetDamage },
-   { &EV_RopePiece_Target2,      Target2 },
-   { &EV_RopePiece_AttachModel,  AttachModelToRope },
-   { NULL, NULL }
+	//{ &EV_RopePiece_Setup,				Setup },
+	{ &EV_RopePiece_Setup,				&Setup },
+	{ &EV_Activate,						&PieceTriggered },
+	{ &EV_RopePiece_WiggleTime,			&SetWiggleTime },
+	{ &EV_RopePiece_WiggleMove,			&SetWiggleMove },
+	{ &EV_RopePiece_Damage,				&SetDamage },
+	{ &EV_RopePiece_Target2,			&Target2 },
+	{ &EV_RopePiece_AttachModel,		&AttachModelToRope },
+	{ NULL, NULL }
 };
 
 RopePiece::RopePiece()
@@ -1063,16 +1066,18 @@ Event EV_RopeBase_RopeShader
    "Set the shader to use on the rope."
    );
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION(RopePiece, RopeBase, "func_rope_base")
    {
-      { &EV_RopeBase_Setup,            Setup },
-      { &EV_RopeBase_Stiffness,        SetStiffness },
-      { &EV_RopeBase_Strength,         SetStrength },
-      { &EV_RopeBase_PieceLength,      SetPieceLength },
-      { &EV_RopeBase_RopeDampener,     SetRopeDampener },
-      { &EV_RopeBase_RopeShader,       SetShader },
-      { &EV_Activate,                  Activate },
-      { NULL, NULL }
+		//{ &EV_RopeBase_Setup,				Setup },
+		{ &EV_RopeBase_Setup,				&Setup },
+		{ &EV_RopeBase_Stiffness,			&SetStiffness },
+		{ &EV_RopeBase_Strength,			&SetStrength },
+		{ &EV_RopeBase_PieceLength,			&SetPieceLength },
+		{ &EV_RopeBase_RopeDampener,		&SetRopeDampener },
+		{ &EV_RopeBase_RopeShader,			&SetShader },
+		{ &EV_Activate,						&Activate },
+		{ NULL, NULL }
    };
 
 RopeBase::RopeBase()

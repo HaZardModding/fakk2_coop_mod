@@ -103,14 +103,15 @@ Event EV_Earthquake_Think
    "think function for the earthquake."
 	);
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Trigger, Earthquake, "func_earthquake" )
 	{
-      { &EV_Touch,                     NULL },
-      { &EV_Trigger_Effect,				Activate },
-      { &EV_Earthquake_Deactivate,     Deactivate },
-      { &EV_Earthquake_SetDuration,    SetDuration },
-      { &EV_Earthquake_SetMagnitude,   SetMagnitude },
-      { &EV_Earthquake_Think,          ThinkEvent },
+      { &EV_Touch,						NULL },
+      { &EV_Trigger_Effect,				&Activate },
+      { &EV_Earthquake_Deactivate,		&Deactivate },
+      { &EV_Earthquake_SetDuration,		&SetDuration },
+      { &EV_Earthquake_SetMagnitude,	&SetMagnitude },
+      { &EV_Earthquake_Think,			&ThinkEvent },
       { NULL, NULL }
    };
 

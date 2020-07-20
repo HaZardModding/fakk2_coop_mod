@@ -113,13 +113,14 @@ Event EV_ThrowGib
    "Throw a gib."
 	);
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Mover, Gib, "gib" )
 	{
-      { &EV_ThrowGib,      Throw },
-      { &EV_Touch,         Splat },
-      { &EV_Stop,          Stop },
-		{ &EV_Damage,        Damage },
-      { NULL, NULL }
+		{ &EV_ThrowGib,			&Throw },
+		{ &EV_Touch,			&Splat },
+		{ &EV_Stop,				&Stop },
+		{ &EV_Damage,			&Damage },
+		{ NULL, NULL }
 	};
 
 Gib::Gib

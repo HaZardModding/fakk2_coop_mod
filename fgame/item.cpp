@@ -286,36 +286,37 @@ Event EV_Item_ForceCoolItem
    "the initial cinematic."
 	);
 
-CLASS_DECLARATION( Trigger, Item, NULL )
-	{
-		//Yorvik
-		{&EV_CTF_Item_ForceAmount,	CTF_ForceAmount},
-		{&EV_CTF_Item_SetTeam,		CTF_SetTeam},
-		{&EV_CTF_Item_ItemStay,		CTF_SetItemStay},
-		//Y
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
+CLASS_DECLARATION(Trigger, Item, NULL)
+{
+	//Yorvik
+	{ &EV_CTF_Item_ForceAmount,	&CTF_ForceAmount },
+	{ &EV_CTF_Item_SetTeam,		&CTF_SetTeam },
+	{ &EV_CTF_Item_ItemStay,	&CTF_SetItemStay },
+	//Y
 
-		{ &EV_Trigger_Effect,	      ItemTouch },
-	   { &EV_Item_DropToFloor,	      DropToFloor },
-	   { &EV_Item_Respawn,		      Respawn },
-	   { &EV_Item_SetAmount,         SetAmountEvent },
-	   { &EV_Item_SetMaxAmount,      SetMaxAmount },
-      { &EV_Item_SetItemName,       SetItemName },
-	   { &EV_Item_Pickup,			   Pickup },
-      { &EV_Use,		               TriggerStuff },
-      { &EV_Item_RespawnSound,      RespawnSound },
-      { &EV_Item_DialogNeeded,      DialogNeeded },
-		{ &EV_Item_NoRemove,          SetNoRemove },
-		{ &EV_Item_RespawnDone,			RespawnDone },
-		{ &EV_Item_PickupDone,			PickupDone },
-		{ &EV_Item_SetRespawn,			setRespawn },
-		{ &EV_Item_SetRespawnTime,		setRespawnTime },
-      { &EV_Item_SetPickupThread,   SetPickupThread },   
-      { &EV_Item_CoolItem,          CoolItemEvent },   
-      { &EV_Item_ForceCoolItem,     ForceCoolItemEvent },   
-		{ &EV_Stop,	               	Landed },
-      { &EV_SetAngle,               SetAngleEvent },
-		{ NULL, NULL }
-	};
+	{ &EV_Trigger_Effect,		&ItemTouch },
+	{ &EV_Item_DropToFloor,		&DropToFloor },
+	{ &EV_Item_Respawn,			&Respawn },
+	{ &EV_Item_SetAmount,		&SetAmountEvent },
+	{ &EV_Item_SetMaxAmount,	&SetMaxAmount },
+	{ &EV_Item_SetItemName,		&SetItemName },
+	{ &EV_Item_Pickup,			&Pickup },
+	{ &EV_Use,					&TriggerStuff },
+	{ &EV_Item_RespawnSound,	&RespawnSound },
+	{ &EV_Item_DialogNeeded,	&DialogNeeded },
+	{ &EV_Item_NoRemove,		&SetNoRemove },
+	{ &EV_Item_RespawnDone,		&RespawnDone },
+	{ &EV_Item_PickupDone,		&PickupDone },
+	{ &EV_Item_SetRespawn,		&setRespawn },
+	{ &EV_Item_SetRespawnTime,	&setRespawnTime },
+	{ &EV_Item_SetPickupThread,	&SetPickupThread },
+	{ &EV_Item_CoolItem,		&CoolItemEvent },
+	{ &EV_Item_ForceCoolItem,	&ForceCoolItemEvent },
+	{ &EV_Stop,					&Landed },
+	{ &EV_SetAngle,				&SetAngleEvent },
+	{ NULL, NULL }
+};
 
 Item::Item() : 
 	//Yorvik

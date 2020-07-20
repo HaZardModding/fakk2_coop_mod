@@ -999,7 +999,10 @@ void Player::CTF_GotKill(Event* ev)
 		{
 			++m_killStreak;
 			
-			for(int i=0; i<CTF::STREAK_NUM_MESSAGES; ++i)
+			//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
+			//int i was only valid inside loop but needs to be valid beyond
+			int i;
+			for(i=0; i<CTF::STREAK_NUM_MESSAGES; ++i)
 			{
 				if(m_killStreak >= CTF::STREAK_FRAGS_REQUIRED[i])
 					break;

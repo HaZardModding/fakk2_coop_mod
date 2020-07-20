@@ -9,11 +9,12 @@
 #include "CTF_DeadBody.h"
 #include "Player.h"
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION(Actor, CTF_DeadBody, NULL)
 {
-	{&EV_Damage,			CTF_DamageEvent},
-	{&EV_TakeDamage,		CTF_TakeDamageEvent},
-	{&EV_FadeOut,			CTF_FadeOut},
+	{&EV_Damage,			&CTF_DamageEvent},
+	{&EV_TakeDamage,		&CTF_TakeDamageEvent},
+	{&EV_FadeOut,			&CTF_FadeOut},
 	{NULL, NULL}
 };
 

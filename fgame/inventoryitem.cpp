@@ -55,10 +55,12 @@ Event EV_InventoryItem_Use
    "Use this inventory item."
 	);
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Item, InventoryItem, NULL )
 	{
-      { &EV_InventoryItem_Use,         UseEvent },
-      { NULL, NULL }
+		//{ &EV_InventoryItem_Use,		UseEvent },
+		{ &EV_InventoryItem_Use,		&UseEvent },
+		{ NULL, NULL }
    };
 
 InventoryItem::InventoryItem
@@ -96,11 +98,13 @@ Event EV_AntiSBJuice_Wearoff
    "Is called when the effect wears off."
 	);
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( InventoryItem, AntiSBJuice, "AntiSBJuice" )
 	{
-      { &EV_AntiSBJuice_Wearoff,				Wearoff },
-		{ &EV_Use, 									UseEvent },
-      { NULL, NULL }
+		//{ &EV_AntiSBJuice_Wearoff,				Wearoff },
+		{ &EV_AntiSBJuice_Wearoff,			&Wearoff },
+		{ &EV_Use,							&UseEvent },
+		{ NULL, NULL }
    };
 
 AntiSBJuice::AntiSBJuice

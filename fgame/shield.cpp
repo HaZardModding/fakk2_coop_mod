@@ -37,9 +37,11 @@ Event EV_Shield_DamageReduction
    "Set the percentage to reduce the amount of damage a sentient takes."
 	);
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Weapon, Shield, NULL )
 	{
-      { &EV_Shield_DamageReduction,    DamageReduction },
+		//{ &EV_Shield_DamageReduction,    DamageReduction },
+		{ &EV_Shield_DamageReduction,    &DamageReduction },
 		{ NULL, NULL }
 	};
 

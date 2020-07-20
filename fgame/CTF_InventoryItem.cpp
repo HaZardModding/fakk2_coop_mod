@@ -14,9 +14,10 @@
 //
 //message handling
 //
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION(InventoryItem, CTF_InventoryItem, NULL)
 {
-	{&EV_SetOrigin,	SetSpawnPosEvent},
+	{&EV_SetOrigin,	&SetSpawnPosEvent},
 	{NULL,			NULL			}
 };
 

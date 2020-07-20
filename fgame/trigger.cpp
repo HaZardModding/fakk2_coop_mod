@@ -430,31 +430,36 @@ set "message" to text string
 
 ******************************************************************************/
 
-CLASS_DECLARATION( Animate, Trigger, "trigger_multiple" )
-	{
-	   { &EV_Trigger_SetWait,				EventSetWait },
-	   { &EV_Trigger_SetDelay,				EventSetDelay },
-	   { &EV_Trigger_SetCount,				EventSetCount },
-	   { &EV_Trigger_SetMessage,			EventSetMessage },
-	   { &EV_Trigger_SetNoise,				EventSetNoise },
-	   { &EV_Trigger_SetSound,				EventSetNoise },
-      { &EV_Trigger_SetThread,		   EventSetThread },
-      { &EV_SetHealth,                 EventSetHealth },
-	   { &EV_Touch,							TriggerStuff },
-	   { &EV_Killed,							TriggerStuff },
-	   { &EV_Activate,						TriggerStuff },
-	   { &EV_Trigger_ActivateTargets,	ActivateTargets },
-	   { &EV_Trigger_SetKey,				EventSetKey },
-	   { &EV_Trigger_StartThread,			StartThread },
-      { &EV_Model,                     SetModelEvent },
-      { &EV_SetAngle,                  SetTriggerDir },
-      { &EV_Trigger_SetTriggerable,    SetTriggerable },
-      { &EV_Trigger_SetNotTriggerable, SetNotTriggerable },
-      { &EV_Trigger_SetMultiFaceted,   SetMultiFaceted },
-      { &EV_Trigger_SetEdgeTriggered,  SetEdgeTriggered },
-      { &EV_Trigger_SetTriggerCone,    SetTriggerCone },
-      { NULL, NULL }
-	};
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
+CLASS_DECLARATION(Animate, Trigger, "trigger_multiple")
+{
+	//{ &EV_Trigger_SetWait,			EventSetWait },
+	{ &EV_Trigger_SetWait,				&EventSetWait },
+	{ &EV_Trigger_SetDelay,				&EventSetDelay },
+	{ &EV_Trigger_SetCount,				&EventSetCount },
+	{ &EV_Trigger_SetMessage,			&EventSetMessage },
+	{ &EV_Trigger_SetNoise,				&EventSetNoise },
+	{ &EV_Trigger_SetSound,				&EventSetNoise },
+	{ &EV_Trigger_SetThread,			&EventSetThread },
+	{ &EV_SetHealth,					&EventSetHealth },
+
+	{ &EV_Touch,						&TriggerStuff },
+	{ &EV_Killed,						&TriggerStuff },
+	{ &EV_Activate,						&TriggerStuff },
+
+	{ &EV_Trigger_ActivateTargets,		&ActivateTargets },
+	{ &EV_Trigger_SetKey,				&EventSetKey },
+	{ &EV_Trigger_StartThread,			&StartThread },
+
+	{ &EV_Model,						&SetModelEvent },
+	{ &EV_SetAngle,						&SetTriggerDir },
+	{ &EV_Trigger_SetTriggerable,		&SetTriggerable },
+	{ &EV_Trigger_SetNotTriggerable,	&SetNotTriggerable },
+	{ &EV_Trigger_SetMultiFaceted,		&SetMultiFaceted },
+	{ &EV_Trigger_SetEdgeTriggered,		&SetEdgeTriggered },
+	{ &EV_Trigger_SetTriggerCone,		&SetTriggerCone },
+	{ NULL, NULL }
+};
 
 Trigger::Trigger()
 	{
@@ -1130,11 +1135,12 @@ void Trigger::SetNotTriggerable
    triggerable = qfalse;
 	}
 
-
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Trigger, TouchField, NULL )
 	{
-	   { &EV_Trigger_Effect,				SendEvent },
-		{ NULL, NULL }
+	   //{ &EV_Trigger_Effect,		SendEvent },
+	   { &EV_Trigger_Effect,		&SendEvent },
+	   { NULL, NULL }
 	};
 
 TouchField::TouchField()
@@ -1309,9 +1315,11 @@ If PROJECTILES is set, the trigger will respond to projectiles (rockets, grenade
 
 ******************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( TriggerOnce, TriggerSecret, "trigger_secret" )
 	{
-		{ &EV_Trigger_Effect,		FoundSecret },
+		//{ &EV_Trigger_Effect,		FoundSecret },
+		{ &EV_Trigger_Effect,		&FoundSecret },
 		{ NULL, NULL }
 	};
 
@@ -1414,11 +1422,14 @@ Event EV_TriggerSetVariable_SetVariableValue
    "  decrement - decrement the variable\n"
    "  toggle - toggle the value of the variable"
    );
+
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Trigger, TriggerSetVariable, "trigger_setvariable" )
 	{
-		{ &EV_Trigger_Effect,		SetVariable },
-      { &EV_TriggerSetVariable_SetVariable, SetVariableName },
-      { &EV_TriggerSetVariable_SetVariableValue, SetVariableValue },
+		//{ &EV_Trigger_Effect,		SetVariable },
+		{ &EV_Trigger_Effect,						&SetVariable },
+		{ &EV_TriggerSetVariable_SetVariable,		&SetVariableName },
+		{ &EV_TriggerSetVariable_SetVariableValue,	&SetVariableValue },
 		{ NULL, NULL }
 	};
 
@@ -1564,11 +1575,13 @@ Event EV_TriggerPush_SetPushSpeed
    "Set the push speed of the TriggerPush"
    );
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Trigger, TriggerPush, "trigger_push" )
 	{
-	   { &EV_Trigger_Effect,			   Push },
-	   { &EV_SetAngle,	               SetPushDir },
-	   { &EV_TriggerPush_SetPushSpeed,	SetPushSpeed },
+		//{ &EV_Trigger_Effect,	Push },
+		{ &EV_Trigger_Effect,			&Push },
+		{ &EV_SetAngle,					&SetPushDir },
+		{ &EV_TriggerPush_SetPushSpeed,	&SetPushSpeed },
 		{ NULL, NULL }
 	};
 
@@ -1677,10 +1690,12 @@ Event EV_TriggerPushAny_SetSpeed
    "Set the speed."
 	);
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Trigger, TriggerPushAny, "trigger_pushany" )
 	{
-      { &EV_TriggerPushAny_SetSpeed,   SetSpeed },
-	   { &EV_Trigger_Effect,			   Push },
+		//{ &EV_TriggerPushAny_SetSpeed,   SetSpeed },
+		{ &EV_TriggerPushAny_SetSpeed,		&SetSpeed },
+		{ &EV_Trigger_Effect,				&Push },
 		{ NULL, NULL }
 	};
 
@@ -1770,13 +1785,15 @@ Event EV_TriggerPlaySound_SetChannel
    "Sets the sound channel to play on."
 	);
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Trigger, TriggerPlaySound, "play_sound_triggered" )
 	{
-	   { &EV_Trigger_Effect,						   ToggleSound },
-	   { &EV_TriggerPlaySound_SetVolume,		   SetVolume },
-	   { &EV_TriggerPlaySound_SetMinDist,			SetMinDist },
-	   { &EV_TriggerPlaySound_SetChannel,		   SetChannel },
-		{ &EV_Touch,                              NULL },
+		//{ &EV_Trigger_Effect,						   ToggleSound },
+		{ &EV_Trigger_Effect,					&ToggleSound },
+		{ &EV_TriggerPlaySound_SetVolume,		&SetVolume },
+		{ &EV_TriggerPlaySound_SetMinDist,		&SetMinDist },
+		{ &EV_TriggerPlaySound_SetChannel,		&SetChannel },
+		{ &EV_Touch,							NULL },
 		{ NULL, NULL }
 	};
 
@@ -2004,12 +2021,14 @@ Event EV_Trigger_SetChance
    "Sets the chance that the sound will play when triggered."
 	);
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( TriggerSpeaker, RandomSpeaker, "sound_randomspeaker" )
 	{
-	   { &EV_Trigger_Effect,						TriggerSound },
-      { &EV_Trigger_SetMinDelay,             SetMinDelay },
-      { &EV_Trigger_SetMaxDelay,             SetMaxDelay },
-      { &EV_Trigger_SetChance,               SetChance },
+		//{ &EV_Trigger_Effect,				TriggerSound },
+		{ &EV_Trigger_Effect,				&TriggerSound },
+		{ &EV_Trigger_SetMinDelay,			&SetMinDelay },
+		{ &EV_Trigger_SetMaxDelay,			&SetMaxDelay },
+		{ &EV_Trigger_SetChance,			&SetChance },
 		{ &EV_Touch,	NULL },
 		{ NULL, NULL }
 	};
@@ -2142,12 +2161,14 @@ Event EV_TriggerChangeLevel_SpawnSpot
    "Sets the spawn spot to use."
 	);
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Trigger, TriggerChangeLevel, "trigger_changelevel" )
 	{
-		{ &EV_Trigger_Effect,		            ChangeLevel },
-      { &EV_TriggerChangeLevel_Map,          SetMap },
-      { &EV_TriggerChangeLevel_SpawnSpot,    SetSpawnSpot },
-      { &EV_Trigger_SetThread,		         SetThread },
+		//{ &EV_Trigger_Effect,ChangeLevel },
+		{ &EV_Trigger_Effect,					&ChangeLevel },
+		{ &EV_TriggerChangeLevel_Map,			&SetMap },
+		{ &EV_TriggerChangeLevel_SpawnSpot,		&SetSpawnSpot },
+		{ &EV_Trigger_SetThread,				&SetThread },
 		{ NULL, NULL }
 	};
 
@@ -2271,10 +2292,12 @@ If MONSTERS is set, the trigger will respond to monsters
 
 ******************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Trigger, TriggerUse, "trigger_use" )
 	{
-	   { &EV_Use,		   TriggerStuff },
-		{ &EV_Touch,	   NULL },
+		//{ &EV_Use,		   TriggerStuff },
+		{ &EV_Use,			&TriggerStuff },
+		{ &EV_Touch,		NULL },
 		{ NULL, NULL }
 	};
 
@@ -2365,12 +2388,14 @@ Event EV_TriggerHurt_SetDamageType
    "Sets the type of damage a TriggerHurt delivers."
 	);
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( TriggerUse, TriggerHurt, "trigger_hurt" )
 	{
-		{ &EV_Trigger_Effect,		      Hurt },
-		{ &EV_TriggerHurt_SetDamage,     SetDamage },
-		{ &EV_TriggerHurt_SetDamageType, DamageType },
-	   { &EV_Touch,						   Trigger::TriggerStuff },
+		//{ &EV_Trigger_Effect,				Hurt },
+		{ &EV_Trigger_Effect,				&Hurt },
+		{ &EV_TriggerHurt_SetDamage,		&SetDamage },
+		{ &EV_TriggerHurt_SetDamageType,	&DamageType },
+		{ &EV_Touch,						&Trigger::TriggerStuff },
 		{ NULL, NULL }
 	};
 
@@ -2441,12 +2466,14 @@ Event EV_TriggerDamageTargets_SetDamage
    "Sets the amount of damage to do."
 	);
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Trigger, TriggerDamageTargets, "trigger_damagetargets" )
 	{
-      { &EV_Trigger_ActivateTargets,	DamageTargets },
-      { &EV_TriggerDamageTargets_SetDamage, SetDamage },
-      { &EV_Damage,						   PassDamage },
-		{ &EV_Touch,                     NULL },
+		//{ &EV_Trigger_ActivateTargets,	DamageTargets },
+		{ &EV_Trigger_ActivateTargets,			&DamageTargets },
+		{ &EV_TriggerDamageTargets_SetDamage,	&SetDamage },
+		{ &EV_Damage,							&PassDamage },
+		{ &EV_Touch,							NULL },
 		{ NULL, NULL }
 	};
 
@@ -2610,9 +2637,11 @@ If MONSTERS is set, the trigger will respond to monsters
 
 ******************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( TriggerUse, TriggerCameraUse, "trigger_camerause" )
 	{
-	   { &EV_Use,		TriggerCamera },
+		//{ &EV_Use,		TriggerCamera },
+		{ &EV_Use,		&TriggerCamera },
 		{ &EV_Touch,	NULL },
 		{ NULL, NULL }
 	};
@@ -2702,10 +2731,12 @@ Event EV_TriggerExit_TurnExitOff
    "Internal event that turns the exit sign off."
 	);
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Trigger, TriggerExit, "trigger_exit" )
 	{
-		{ &EV_Trigger_Effect,		DisplayExitSign },
-		{ &EV_TriggerExit_TurnExitOff, TurnExitSignOff },
+		//{ &EV_Trigger_Effect,		DisplayExitSign },
+		{ &EV_Trigger_Effect,				&DisplayExitSign },
+		{ &EV_TriggerExit_TurnExitOff,		&TurnExitSignOff },
 		{ NULL, NULL }
 	};
 
@@ -2779,10 +2810,12 @@ Event EV_TriggerBox_SetMaxs
    "Sets the maximum bounds of the trigger box."
 	);
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Trigger, TriggerBox, "trigger_box" )
 	{
-      { &EV_TriggerBox_SetMins,  SetMins },
-      { &EV_TriggerBox_SetMaxs,  SetMaxs },
+		//{ &EV_TriggerBox_SetMins,  SetMins },
+		{ &EV_TriggerBox_SetMins,		&SetMins },
+		{ &EV_TriggerBox_SetMaxs,		&SetMaxs },
 		{ NULL, NULL }
 	};
 
@@ -2892,15 +2925,17 @@ Event EV_TriggerMusic_OneShot
    "Make this a one time trigger."
 	);
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Trigger, TriggerMusic, "trigger_music" )
 	{
-		{ &EV_TriggerMusic_CurrentMood,	SetCurrentMood },
-		{ &EV_TriggerMusic_FallbackMood,	SetFallbackMood },
-		{ &EV_TriggerMusic_AltCurrentMood,	SetAltCurrentMood },
-		{ &EV_TriggerMusic_AltFallbackMood,	SetAltFallbackMood },
-		{ &EV_TriggerMusic_OneShot,		SetOneShot },
-		{ &EV_Trigger_Effect,				ChangeMood },
-		{ &EV_Trigger_Effect_Alt,			AltChangeMood },
+		//{ &EV_TriggerMusic_CurrentMood,	SetCurrentMood },
+		{ &EV_TriggerMusic_CurrentMood,			&SetCurrentMood },
+		{ &EV_TriggerMusic_FallbackMood,		&SetFallbackMood },
+		{ &EV_TriggerMusic_AltCurrentMood,		&SetAltCurrentMood },
+		{ &EV_TriggerMusic_AltFallbackMood,		&SetAltFallbackMood },
+		{ &EV_TriggerMusic_OneShot,				&SetOneShot },
+		{ &EV_Trigger_Effect,					&ChangeMood },
+		{ &EV_Trigger_Effect_Alt,				&AltChangeMood },
 		{ NULL, NULL }
 	};
 
@@ -3117,15 +3152,17 @@ Event EV_TriggerReverb_OneShot
    "Make this a one time trigger."
 	);
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Trigger, TriggerReverb, "trigger_music" )
 	{
-		{ &EV_TriggerReverb_ReverbType,	   SetReverbType },
-		{ &EV_TriggerReverb_ReverbLevel,	   SetReverbLevel },
-		{ &EV_TriggerReverb_AltReverbType,	SetAltReverbType },
-		{ &EV_TriggerReverb_AltReverbLevel,	SetAltReverbLevel },
-		{ &EV_TriggerReverb_OneShot,		   SetOneShot },
-		{ &EV_Trigger_Effect,				   ChangeReverb },
-		{ &EV_Trigger_Effect_Alt,			   AltChangeReverb },
+		//{ &EV_TriggerReverb_ReverbType,	   SetReverbType },
+		{ &EV_TriggerReverb_ReverbType,			&SetReverbType },
+		{ &EV_TriggerReverb_ReverbLevel,		&SetReverbLevel },
+		{ &EV_TriggerReverb_AltReverbType,		&SetAltReverbType },
+		{ &EV_TriggerReverb_AltReverbLevel,		&SetAltReverbLevel },
+		{ &EV_TriggerReverb_OneShot,			&SetOneShot },
+		{ &EV_Trigger_Effect,					&ChangeReverb },
+		{ &EV_Trigger_Effect_Alt,				&AltChangeReverb },
 		{ NULL, NULL }
 	};
 
@@ -3292,9 +3329,11 @@ Event EV_TriggerByPushObject_TriggerName
    "If set, trigger will only respond to objects with specified name."
 	);
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( TriggerOnce, TriggerByPushObject, "trigger_pushobject" )
 	{
-      { &EV_TriggerByPushObject_TriggerName,    setTriggerName },
+		//{ &EV_TriggerByPushObject_TriggerName,    setTriggerName },
+		{ &EV_TriggerByPushObject_TriggerName,		&setTriggerName },
 		{ NULL, NULL }
 	};
 
@@ -3377,11 +3416,13 @@ Event EV_TriggerGivePowerup_PowerupName
    "Specifies the powerup to give to the sentient."
 	);
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Trigger, TriggerGivePowerup, "trigger_givepowerup" )
 	{
-		{ &EV_TriggerGivePowerup_OneShot,		SetOneShot },
-		{ &EV_TriggerGivePowerup_PowerupName,	SetPowerupName },
-		{ &EV_Trigger_Effect,						GivePowerup },
+		//{ &EV_TriggerGivePowerup_OneShot,			SetOneShot },
+		{ &EV_TriggerGivePowerup_OneShot,			&SetOneShot },
+		{ &EV_TriggerGivePowerup_PowerupName,		&SetPowerupName },
+		{ &EV_Trigger_Effect,						&GivePowerup },
 		{ NULL, NULL }
 	};
 

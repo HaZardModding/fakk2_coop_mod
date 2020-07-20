@@ -60,10 +60,12 @@ Event EV_FlashbangProjectile_StunRadius
    "Radius of the stun effect"
    );
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Projectile, FlashbangProjectile, NULL )
    {   
-      { &EV_FlashbangProjectile_StunTime,   StunTime },
-      { &EV_FlashbangProjectile_StunRadius, StunRadius },
+		//{ &EV_FlashbangProjectile_StunTime,	StunTime },
+		{ &EV_FlashbangProjectile_StunTime,		&StunTime },
+		{ &EV_FlashbangProjectile_StunRadius,	&StunRadius },
 		{ NULL, NULL }
 	};
 

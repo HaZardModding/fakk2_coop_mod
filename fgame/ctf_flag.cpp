@@ -43,12 +43,14 @@ qboolean DropFlag(gentity_t* ent)
 
 /////////////////////////////////////////////////////////////////////////////
 // Flag base
+
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION(CTF_InventoryItem, CTF_Flag, NULL)
 {
-	{&EV_Item_Pickup,			Pickup		},
-	{&EV_Item_Respawn,			ReturnFlag	},
-	{&EV_Set_Team,				SetTeam		},
-	{&EV_CTF_FlagDropThink,		DropThink	},
+	{&EV_Item_Pickup,			&Pickup		},
+	{&EV_Item_Respawn,			&ReturnFlag	},
+	{&EV_Set_Team,				&SetTeam	},
+	{&EV_CTF_FlagDropThink,		&DropThink	},
 	{NULL, NULL}
 };
 

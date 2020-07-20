@@ -55,11 +55,13 @@ Event EV_ClusterBomb_ClusterCount
    "The number of clusters to spawn"
    );
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
+//{ &EV_ClusterBomb_Think,            Think }, -fixed multiple occurences
 CLASS_DECLARATION( Projectile, ClusterBomb, NULL )
 	{
-      { &EV_ClusterBomb_Think,            Think },
-      { &EV_ClusterBomb_ClusterCount,     ClusterCount },
-      { &EV_ClusterBomb_ClusterModel,     ClusterModel },
+      { &EV_ClusterBomb_Think,            &Think },
+      { &EV_ClusterBomb_ClusterCount,     &ClusterCount },
+      { &EV_ClusterBomb_ClusterModel,     &ClusterModel },
 		{ NULL, NULL }
 	};
 

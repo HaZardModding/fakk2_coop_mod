@@ -213,16 +213,17 @@ Event EV_Arena_AddAmmo
    "Add this ammo to the players when they start the match"
    );
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Listener, DM_Arena, NULL )
    {
-      { &EV_Arena_SetName,                   SetName },
-      { &EV_Arena_SetHealth,                 SetHealth },
-      { &EV_Arena_SetWater,                  SetWater },
-      { &EV_Arena_SetPlayersPerTeam,         SetPlayersPerTeam },
-      { &EV_Arena_Countdown,                 Countdown },
-      { &EV_Arena_EndMatch,                  EndMatch },
-      { &EV_Arena_AddWeapon,                 AddWeapon },
-      { &EV_Arena_AddAmmo,                   AddAmmo },
+      { &EV_Arena_SetName,					 &SetName },
+      { &EV_Arena_SetHealth,                 &SetHealth },
+      { &EV_Arena_SetWater,                  &SetWater },
+      { &EV_Arena_SetPlayersPerTeam,         &SetPlayersPerTeam },
+      { &EV_Arena_Countdown,                 &Countdown },
+      { &EV_Arena_EndMatch,                  &EndMatch },
+      { &EV_Arena_AddWeapon,                 &AddWeapon },
+      { &EV_Arena_AddAmmo,                   &AddAmmo },
       { NULL, NULL }
    };
 
@@ -406,13 +407,15 @@ void DM_Arena::TeamForfeitMatch
    t1 = m_fightingTeams.ObjectAt( 1 );
    t2 = m_fightingTeams.ObjectAt( 2 );
 
-   if ( forfeitTeam == t1 ) // Team 2 wins by forfeit
+   //HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
+   if ((DM_Team*)forfeitTeam == t1 ) // Team 2 wins by forfeit
       {
       m_fightingTeams.RemoveObject( t1 );
       m_teamQueue.Enqueue( t1 );
       CenterPrintClientsInArena( va( "%s Wins by Forfeit", t2->getName().c_str() ) );            
       }
-   else if ( forfeitTeam == t2 ) // Team 1 wins by forfeit
+   //HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
+   else if ( (DM_Team*)forfeitTeam == t2 ) // Team 1 wins by forfeit
       {
       m_fightingTeams.RemoveObject( t2 );
       m_teamQueue.Enqueue( t2 );

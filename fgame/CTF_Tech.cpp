@@ -64,32 +64,33 @@ extern	Event EV_SetScale;
 // CTF_Tech
 //////////////////////////////////////////////////////////////////////
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION(CTF_InventoryItem, CTF_Tech, NULL)
 {
-	{&EV_SetScale,					SetScale				},
-	{&EV_Item_Pickup,				Pickup					},
-	{&EV_Item_Respawn,				Respawn					},
-	{&EV_CTF_Tech_Drop,				DropTech				},
-	{&EV_CTF_Tech_Trigger,			TechTrigger				},
-	{&EV_CTF_Tech_Second,			TriggerSecond			},
-	{&EV_CTF_Tech_Shrink,			Shrink					},
-	{&EV_CTF_Tech_Grow,				Grow					},
+	{&EV_SetScale,					&SetScale				},
+	{&EV_Item_Pickup,				&Pickup					},
+	{&EV_Item_Respawn,				&Respawn				},
+	{&EV_CTF_Tech_Drop,				&DropTech				},
+	{&EV_CTF_Tech_Trigger,			&TechTrigger			},
+	{&EV_CTF_Tech_Second,			&TriggerSecond			},
+	{&EV_CTF_Tech_Shrink,			&Shrink					},
+	{&EV_CTF_Tech_Grow,				&Grow					},
 
-	{&EV_CTF_Tech_PickupSound,		SetPickupSound			},
-	{&EV_CTF_Tech_UseSound,			SetUseSound				},
-	{&EV_CTF_Tech_DieSound,			SetDieSound				},
-	{&EV_CTF_Tech_SetEffect,		SetEffect				},
+	{&EV_CTF_Tech_PickupSound,		&SetPickupSound			},
+	{&EV_CTF_Tech_UseSound,			&SetUseSound			},
+	{&EV_CTF_Tech_DieSound,			&SetDieSound			},
+	{&EV_CTF_Tech_SetEffect,		&SetEffect				},
 
-	{&EV_CTF_Tech_ID,				SetID					},
-	{&EV_CTF_Tech_HealthRegenerate,	SetHealthRegenAmount	},
-	{&EV_CTF_Tech_WaterRegenerate,	SetWaterRegenAmount		},
-	{&EV_CTF_Tech_EmpathyFactor,	SetEmpathyFactor		},
-	{&EV_CTF_Tech_DamageFactor,		SetDamageFactor			},
-	{&EV_CTF_Tech_ProtectionFactor,	SetProtectionFactor		},
-	{&EV_CTF_Tech_SetAcroFactor,	SetAcroFactor			},
-	{&EV_CTF_Tech_Delay,			SetDelay				},
+	{&EV_CTF_Tech_ID,				&SetID					},
+	{&EV_CTF_Tech_HealthRegenerate,	&SetHealthRegenAmount	},
+	{&EV_CTF_Tech_WaterRegenerate,	&SetWaterRegenAmount	},
+	{&EV_CTF_Tech_EmpathyFactor,	&SetEmpathyFactor		},
+	{&EV_CTF_Tech_DamageFactor,		&SetDamageFactor		},
+	{&EV_CTF_Tech_ProtectionFactor,	&SetProtectionFactor	},
+	{&EV_CTF_Tech_SetAcroFactor,	&SetAcroFactor			},
+	{&EV_CTF_Tech_Delay,			&SetDelay				},
 
-	{&EV_CTF_Tech_Duration,			SetDuration				},
+	{&EV_CTF_Tech_Duration,			&SetDuration			},
 
 	{NULL, NULL}
 };

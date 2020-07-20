@@ -70,9 +70,10 @@ qboolean ReturnSpitModule(gentity_t* ent)
 //
 //Class Declaration
 //
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION(Weapon, CTF_Spit, "ctf_weapon_spit")
 {
-	{&EV_CTF_Spit_SetTeleportModel,	SetTeleportModel},
+	{&EV_CTF_Spit_SetTeleportModel,	&SetTeleportModel},
 	{NULL, NULL}
 	
 };
@@ -319,13 +320,13 @@ void CTF_Spit::Shoot(Event* ev)
 //--------------------------------------------------------
 
 
-
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION(Projectile, CTF_SpitModule, NULL)
 {
-	{&EV_CTF_SpitModule_Return,			Return},
-	{&EV_CTF_SpitModule_SetReturnModel,	SetReturnModel},
-	{&EV_CTF_TakeDamage,				CTF_TakeDamage},
-	{&EV_TakeDamage,					DummyTakeDamage},
+	{&EV_CTF_SpitModule_Return,			&Return},
+	{&EV_CTF_SpitModule_SetReturnModel,	&SetReturnModel},
+	{&EV_CTF_TakeDamage,				&CTF_TakeDamage},
+	{&EV_TakeDamage,					&DummyTakeDamage},
 	//{&EV_Touch,							Touch},
 	{NULL, NULL}
 };

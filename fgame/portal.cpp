@@ -66,9 +66,11 @@ Event EV_Portal_LocateCamera
    "Locates the camera position."
 	);
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Entity, PortalSurface, "portal_surface" )
 	{
-      { &EV_Portal_LocateCamera,     LocateCamera },
+		//{ &EV_Portal_LocateCamera,     LocateCamera },
+		{ &EV_Portal_LocateCamera,     &LocateCamera },
 		{ NULL, NULL }
 	};
 
@@ -159,9 +161,11 @@ Event EV_Portal_Roll
    "Sets the portal camera's roll."
 	);
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Entity, PortalCamera, "portal_camera" )
 	{
-      { &EV_Portal_Roll,         Roll },
+		//{ &EV_Portal_Roll,         Roll },
+		{ &EV_Portal_Roll,         &Roll },
 		{ NULL, NULL }
 	};
 

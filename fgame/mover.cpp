@@ -52,9 +52,10 @@
 #define MOVE_ANGLES 1
 #define MOVE_ORIGIN 2
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Trigger, Mover, "mover" )
 	{
-	   { &EV_MoveDone,         MoveDone },
+	   { &EV_MoveDone,         &MoveDone },
 		{ NULL, NULL }
 	};
 

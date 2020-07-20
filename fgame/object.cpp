@@ -111,14 +111,15 @@ Event EV_Object_Shootable
    "Make the object shootable but not necessarily solid to the player."
 	);
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Animate, Object, "object" )
-	{
-      { &EV_Killed,					      Killed },
-      { &EV_Object_Setup,              Setup },
-      { &EV_Object_SetAnim,            SetAnim },
-      { &EV_Object_Shootable,          MakeShootable },
-		{ NULL, NULL }
-	};
+{
+	{ &EV_Killed,					 &Killed },
+	{ &EV_Object_Setup,              &Setup },
+	{ &EV_Object_SetAnim,            &SetAnim },
+	{ &EV_Object_Shootable,          &MakeShootable },
+	{ NULL, NULL }
+};
 
 Object::Object()
 	{
@@ -301,13 +302,15 @@ Event EV_ThrowObject_ThrowSound
    "Sets the sound to play when object is thrown."
 	);
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Object, ThrowObject, "func_throwobject" )
 	{
-      { &EV_Touch,					      Touch },
-      { &EV_ThrowObject_Pickup,	      Pickup },
-      { &EV_ThrowObject_Throw,	      Throw },
-      { &EV_ThrowObject_PickupOffset,	PickupOffset },
-      { &EV_ThrowObject_ThrowSound,	   ThrowSound },
+		//{ &EV_Touch,						Touch },
+		{ &EV_Touch,						&Touch },
+		{ &EV_ThrowObject_Pickup,			&Pickup },
+		{ &EV_ThrowObject_Throw,			&Throw },
+		{ &EV_ThrowObject_PickupOffset,		&PickupOffset },
+		{ &EV_ThrowObject_ThrowSound,		&ThrowSound },
 		{ NULL, NULL }
 	};
 

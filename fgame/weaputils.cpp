@@ -987,40 +987,41 @@ Event EV_Projectile_RemoveWhenStopped
    "Make the projectile get removed when it stops"
    );
 
-
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Animate, Projectile, NULL )
 	{
-      { &EV_Touch,                              Touch },
-      { &EV_Projectile_Speed,                   SetSpeed },
-      { &EV_Projectile_MinSpeed,                SetMinSpeed },
-      { &EV_Projectile_ChargeSpeed,             SetChargeSpeed },
-      { &EV_Projectile_Damage,                  SetDamage },
-      { &EV_Projectile_Life,                    SetLife },
-      { &EV_Projectile_MinLife,                 SetMinLife },
-      { &EV_Projectile_ChargeLife,              SetChargeLife },
-      { &EV_Projectile_Knockback,               SetKnockback },
-      { &EV_Projectile_DLight,                  SetDLight },
-      { &EV_Projectile_Avelocity,               SetAvelocity },
-		{ &EV_Projectile_MeansOfDeath,            SetMeansOfDeath },
-      { &EV_Projectile_BounceTouch,             SetBounceTouch },
-      { &EV_Projectile_BounceSound,             SetBounceSound },
-      { &EV_Projectile_BeamCommand,             BeamCommand },
-      { &EV_Projectile_UpdateBeam,              UpdateBeam },
-      { &EV_Projectile_Explode,                 Explode },
-      { &EV_Projectile_ImpactMarkShader,        SetImpactMarkShader },
-      { &EV_Projectile_ImpactMarkRadius,        SetImpactMarkRadius },
-      { &EV_Projectile_ImpactMarkOrientation,   SetImpactMarkOrientation },
-      { &EV_Projectile_SetExplosionModel,       SetExplosionModel },
-      { &EV_Projectile_SetAddVelocity,          SetAddVelocity },
-      { &EV_Projectile_AddOwnerVelocity,        AddOwnerVelocity },
-      { &EV_Projectile_HeatSeek,		      	   HeatSeek },
-      { &EV_Projectile_Drunk,		          	   Drunk },
-      { &EV_Projectile_Prethink,		      	   Prethink },
-		{ &EV_Projectile_SetCanHitOwner,	      	SetCanHitOwner },
-		{ &EV_Projectile_ClearOwner,		      	ClearOwner },
-		{ &EV_Projectile_RemoveWhenStopped,     	RemoveWhenStopped },
-      { &EV_Killed,		      	               Explode },
-		{ &EV_Stop,			      	               Stopped },
+		//{ &EV_Touch,								Touch },
+		{ &EV_Touch,								&Touch },
+		{ &EV_Projectile_Speed,						&SetSpeed },
+		{ &EV_Projectile_MinSpeed,					&SetMinSpeed },
+		{ &EV_Projectile_ChargeSpeed,				&SetChargeSpeed },
+		{ &EV_Projectile_Damage,					&SetDamage },
+		{ &EV_Projectile_Life,						&SetLife },
+		{ &EV_Projectile_MinLife,					&SetMinLife },
+		{ &EV_Projectile_ChargeLife,				&SetChargeLife },
+		{ &EV_Projectile_Knockback,					&SetKnockback },
+		{ &EV_Projectile_DLight,					&SetDLight },
+		{ &EV_Projectile_Avelocity,					&SetAvelocity },
+		{ &EV_Projectile_MeansOfDeath,				&SetMeansOfDeath },
+		{ &EV_Projectile_BounceTouch,				&SetBounceTouch },
+		{ &EV_Projectile_BounceSound,				&SetBounceSound },
+		{ &EV_Projectile_BeamCommand,				&BeamCommand },
+		{ &EV_Projectile_UpdateBeam,				&UpdateBeam },
+		{ &EV_Projectile_Explode,					&Explode },
+		{ &EV_Projectile_ImpactMarkShader,			&SetImpactMarkShader },
+		{ &EV_Projectile_ImpactMarkRadius,			&SetImpactMarkRadius },
+		{ &EV_Projectile_ImpactMarkOrientation,		&SetImpactMarkOrientation },
+		{ &EV_Projectile_SetExplosionModel,			&SetExplosionModel },
+		{ &EV_Projectile_SetAddVelocity,			&SetAddVelocity },
+		{ &EV_Projectile_AddOwnerVelocity,			&AddOwnerVelocity },
+		{ &EV_Projectile_HeatSeek,					&HeatSeek },
+		{ &EV_Projectile_Drunk,						&Drunk },
+		{ &EV_Projectile_Prethink,					&Prethink },
+		{ &EV_Projectile_SetCanHitOwner,			&SetCanHitOwner },
+		{ &EV_Projectile_ClearOwner,				&ClearOwner },
+		{ &EV_Projectile_RemoveWhenStopped,	 		&RemoveWhenStopped },
+		{ &EV_Killed,								&Explode },
+		{ &EV_Stop,									&Stopped },
 		{ NULL, NULL }
 	};
 
@@ -1761,15 +1762,17 @@ Event EV_Explosion_RadiusDamage
    );
 
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Projectile, Explosion, NULL )
    {
-		{ &EV_Explosion_Radius,							SetRadius },
-		{ &EV_Explosion_ConstantDamage,				SetConstantDamage },
-		{ &EV_Explosion_DamageEveryFrame,			SetDamageEveryFrame },
-		{ &EV_Explosion_DamageAgain,					DamageAgain },
-      { &EV_Explosion_Flash,			 	      	SetFlash },
-      { &EV_Explosion_RadiusDamage,		      	SetRadiusDamage },
-      { NULL, NULL }
+		//{ &EV_Explosion_Radius,					SetRadius },
+		{ &EV_Explosion_Radius,						&SetRadius },
+		{ &EV_Explosion_ConstantDamage,				&SetConstantDamage },
+		{ &EV_Explosion_DamageEveryFrame,			&SetDamageEveryFrame },
+		{ &EV_Explosion_DamageAgain,				&DamageAgain },
+		{ &EV_Explosion_Flash,						&SetFlash },
+		{ &EV_Explosion_RadiusDamage,				&SetRadiusDamage },
+		{ NULL, NULL }
    };
 
 Explosion::Explosion()

@@ -727,9 +727,10 @@ void Idle::End
 
 ****************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, Pain, NULL )
 	{
-		{ &EV_Behavior_AnimDone,	AnimDone },
+		{ &EV_Behavior_AnimDone,	&AnimDone },
 		{ NULL, NULL }
 	};
 
@@ -906,9 +907,11 @@ void Pain::End
 
 ****************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, Watch, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -982,9 +985,11 @@ void Watch::End
 
 ****************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, Turn, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -1144,9 +1149,11 @@ void Aim::End
 
 ****************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, TurnTo, NULL )
 	{
-		{ &EV_Behavior_AnimDone,	AnimDone },
+		//{ &EV_Behavior_AnimDone,	AnimDone },
+		{ &EV_Behavior_AnimDone,	&AnimDone },
 		{ NULL, NULL }
 	};
 
@@ -1336,9 +1343,11 @@ void TurnTo::End
 
 ****************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, HeadWatch, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -1501,9 +1510,11 @@ void HeadWatch::End
 
 ****************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, TorsoTurn, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -1673,10 +1684,12 @@ void TorsoTurn::End
 
 ****************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, GotoPathNode, NULL )
 	{
-		{ &EV_Behavior_AnimDone,	AnimDone },
-		{ &EV_Behavior_Args,			SetArgs },
+		//{ &EV_Behavior_AnimDone,	AnimDone },
+		{ &EV_Behavior_AnimDone,	&AnimDone },
+		{ &EV_Behavior_Args,		&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -1886,9 +1899,11 @@ void GotoPathNode::End
 
 ****************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, Flee, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		//{ &EV_Behavior_Args,		SetArgs },
+		{ &EV_Behavior_Args,		&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -2038,9 +2053,11 @@ void Flee::End
 
 ****************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, PlayAnim, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -2108,9 +2125,11 @@ void PlayAnim::End
 #define TALK_MODE_WAIT			2
 #define TALK_MODE_TURN_BACK	3
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, Talk, NULL )
 	{
-		{ &EV_Behavior_AnimDone,	AnimDone },
+		//{ &EV_Behavior_AnimDone,	AnimDone },
+		{ &EV_Behavior_AnimDone,	&AnimDone },
 		{ NULL, NULL }
 	};
 
@@ -2320,9 +2339,11 @@ void Talk::End
 
 ****************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, FindCover, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -2537,9 +2558,11 @@ void FindCover::End
 
 ****************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, FindFlee, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -2738,9 +2761,11 @@ void FindFlee::End
 
 ****************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, FindEnemy, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -2970,10 +2995,12 @@ void FindEnemy::End
 
 ****************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, AimAndShoot, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
-		{ &EV_Behavior_AnimDone,	AnimDone },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
+		{ &EV_Behavior_AnimDone,		&AnimDone },
 		{ NULL, NULL }
 	};
 
@@ -3213,11 +3240,12 @@ void AimAndShoot::End
   AimAndMelee Class Definition
 
 ****************************************************************************/
-
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, AimAndMelee, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
-		{ &EV_Behavior_AnimDone,	AnimDone },
+		//{ &EV_Behavior_Args,		SetArgs },
+		{ &EV_Behavior_Args,		&SetArgs },
+		{ &EV_Behavior_AnimDone,	&AnimDone },
 		{ NULL, NULL }
 	};
 
@@ -3344,9 +3372,10 @@ void AimAndMelee::End
 
 ****************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, JumpToPathNode, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -3657,10 +3686,11 @@ void FlyToPoint::End
 
 ****************************************************************************/
 
-
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, FlyCloseToEnemy, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -3760,10 +3790,11 @@ void FlyCloseToEnemy::End
 
 ****************************************************************************/
 
-
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, FlyCloseToPlayer, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -3867,10 +3898,11 @@ void FlyCloseToPlayer::End
 
 ****************************************************************************/
 
-
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, FlyWander, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -4012,10 +4044,11 @@ void FlyWander::End
 
 ****************************************************************************/
 
-
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, FlyCircle, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -4160,10 +4193,11 @@ void FlyCircle::End
 
 ****************************************************************************/
 
-
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, FlyDive, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -4307,10 +4341,11 @@ void FlyDive::End
 
 ****************************************************************************/
 
-
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, FlyClimb, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -4422,9 +4457,10 @@ void FlyClimb::End
 ****************************************************************************/
 
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, Land, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -4500,10 +4536,11 @@ void Land::End
 
 ****************************************************************************/
 
-
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, Wander, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -4611,9 +4648,11 @@ void Wander::End
 
 ****************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, GetCloseToEnemy, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -4721,9 +4760,11 @@ void GetCloseToEnemy::End
 
 ****************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, GotoDeadEnemy, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -4806,9 +4847,11 @@ void GotoDeadEnemy::End
 
 ****************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, Investigate, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -5030,9 +5073,11 @@ void Investigate::End
 
 ****************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, TurnInvestigate, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -5143,10 +5188,12 @@ void TurnInvestigate::End
 
 ****************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, TurnToEnemy, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
-		{ &EV_Behavior_AnimDone,	AnimDone },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
+		{ &EV_Behavior_AnimDone,		&AnimDone },
 		{ NULL, NULL }
 	};
 
@@ -5284,11 +5331,12 @@ void TurnToEnemy::End
 
 ****************************************************************************/
 
-
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, PickupEntity, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
-		{ &EV_Behavior_AnimDone,	AnimDone },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
+		{ &EV_Behavior_AnimDone,		&AnimDone },
 		{ NULL, NULL }
 	};
 
@@ -5355,10 +5403,12 @@ void PickupEntity::End
 
 ****************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, ThrowEntity, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
-		{ &EV_Behavior_AnimDone,	AnimDone },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
+		{ &EV_Behavior_AnimDone,		&AnimDone },
 		{ NULL, NULL }
 	};
 
@@ -5783,7 +5833,9 @@ void BurrowAttack::End
 
 CLASS_DECLARATION( Behavior, CircleEnemy, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -6086,9 +6138,11 @@ void ShockWater::End
 
 ****************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, Shock, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 	
@@ -6232,9 +6286,11 @@ void Shock::End
 
 ****************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, CircleAttack, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 	
@@ -6406,9 +6462,10 @@ void CircleAttack::End
 
 ****************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, DragEnemy, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -6650,9 +6707,11 @@ void DragEnemy::End
 
 ****************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, Spin, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -6713,9 +6772,11 @@ void Spin::End
 
 ****************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, Digest, NULL )
 	{
-		{ &EV_Behavior_AnimDone,	AnimDone },
+		//{ &EV_Behavior_AnimDone,		AnimDone },
+		{ &EV_Behavior_AnimDone,		&AnimDone },
 		{ NULL, NULL }
 	};
 
@@ -7229,10 +7290,11 @@ void Teleport::End
 
 ****************************************************************************/
 
-
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, TeleportToPosition, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -7388,9 +7450,11 @@ void TeleportToPosition::End
 
 #define GHOST_ATTACK_SPEED  350
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, GhostAttack, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		//{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 
@@ -7645,9 +7709,10 @@ void GhostAttack::End
 
 ****************************************************************************/
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Behavior, Levitate, NULL )
 	{
-		{ &EV_Behavior_Args,			SetArgs },
+		{ &EV_Behavior_Args,			&SetArgs },
 		{ NULL, NULL }
 	};
 

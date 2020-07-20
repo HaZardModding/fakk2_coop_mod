@@ -267,25 +267,27 @@ CLASS_DECLARATION( VehicleBase, FrontWheels, "script_wheelsfront" )
 		{ NULL, NULL }
 	};
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( VehicleBase, Vehicle, "script_vehicle" )
 	{
-	   { &EV_Blocked,					         VehicleBlocked },
-	   { &EV_Touch,					         VehicleTouched },
-	   { &EV_Use,						         DriverUse },
-	   { &EV_Vehicle_Start,			         VehicleStart },
-	   { &EV_Vehicle_Drivable,		         Drivable },
-	   { &EV_Vehicle_UnDrivable,	         UnDrivable },
-	   { &EV_Vehicle_Jumpable,	            Jumpable },
-	   { &EV_Vehicle_SeatAnglesOffset,     SeatAnglesOffset },
-	   { &EV_Vehicle_SeatOffset,           SeatOffset },
-	   { &EV_Vehicle_Lock,		            Lock },
-	   { &EV_Vehicle_UnLock,	            UnLock },
-      { &EV_Vehicle_SetWeapon,            SetWeapon },
-      { &EV_Vehicle_DriverAnimation,      DriverAnimation },
-      { &EV_Vehicle_SetSpeed,             SetSpeed },
-      { &EV_Vehicle_SetTurnRate,          SetTurnRate },
-      { &EV_Vehicle_SteerInPlace,         SteerInPlace },
-      { &EV_Vehicle_ShowWeapon,           ShowWeaponEvent },
+		//{ &EV_Blocked,							VehicleBlocked },
+		{ &EV_Blocked,								&VehicleBlocked },
+		{ &EV_Touch,								&VehicleTouched },
+		{ &EV_Use,									&DriverUse },
+		{ &EV_Vehicle_Start,						&VehicleStart },
+		{ &EV_Vehicle_Drivable,						&Drivable },
+		{ &EV_Vehicle_UnDrivable,					&UnDrivable },
+		{ &EV_Vehicle_Jumpable,						&Jumpable },
+		{ &EV_Vehicle_SeatAnglesOffset,				&SeatAnglesOffset },
+		{ &EV_Vehicle_SeatOffset,					&SeatOffset },
+		{ &EV_Vehicle_Lock,							&Lock },
+		{ &EV_Vehicle_UnLock,						&UnLock },
+		{ &EV_Vehicle_SetWeapon,					&SetWeapon },
+		{ &EV_Vehicle_DriverAnimation,				&DriverAnimation },
+		{ &EV_Vehicle_SetSpeed,						&SetSpeed },
+		{ &EV_Vehicle_SetTurnRate,					&SetTurnRate },
+		{ &EV_Vehicle_SteerInPlace,					&SteerInPlace },
+		{ &EV_Vehicle_ShowWeapon,					&ShowWeaponEvent },
 		{ NULL, NULL }
 	};
 
@@ -1152,11 +1154,11 @@ void Vehicle::SetTurnRate
    maxturnrate = ev->GetFloat( 1 );
    }
 
-
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Vehicle, DrivableVehicle, "script_drivablevehicle" )
 	{
-		{ &EV_Damage,				   Entity::DamageEvent },
-		{ &EV_Killed,				   Killed },
+		{ &EV_Damage,				   &Entity::DamageEvent },
+		{ &EV_Killed,				   &Killed },
 		{ NULL, NULL }
 	};
 

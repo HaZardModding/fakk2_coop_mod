@@ -138,19 +138,20 @@ Event EV_Spawn_SetSpawnChance
 	"Sets the chance that this spawned entity will spawn something when killed, if it is an actor."
 	);
 
-
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( ScriptSlave, Spawn, "func_spawn" )
 	{
-      { &EV_Activate,               DoSpawn },
-      { &EV_Spawn_ModelName,        ModelName },
-      { &EV_Spawn_SpawnTargetName,  SpawnTargetName },
-      { &EV_Spawn_AttackMode,       AttackMode },
-      { &EV_Spawn_SpawnTarget,      SpawnTarget },
-      { &EV_Spawn_PickupThread,     SetPickupThread },
-		{ &EV_SetAngle,			      SetAngleEvent },
-		{ &EV_Spawn_AddSpawnItem,		SetSpawnItem },
-		{ &EV_Spawn_SetSpawnChance,	SetSpawnChance },
-      { NULL, NULL }
+		//{ &EV_Activate,				DoSpawn },
+		{ &EV_Activate,					&DoSpawn },
+		{ &EV_Spawn_ModelName,			&ModelName },
+		{ &EV_Spawn_SpawnTargetName,	&SpawnTargetName },
+		{ &EV_Spawn_AttackMode,			&AttackMode },
+		{ &EV_Spawn_SpawnTarget,		&SpawnTarget },
+		{ &EV_Spawn_PickupThread,		&SetPickupThread },
+		{ &EV_SetAngle,					&SetAngleEvent },
+		{ &EV_Spawn_AddSpawnItem,		&SetSpawnItem },
+		{ &EV_Spawn_SetSpawnChance,		&SetSpawnChance },
+		{ NULL, NULL }
 	};
 
 void Spawn::SetAngleEvent
@@ -335,13 +336,15 @@ Event EV_RandomSpawn_Think
    "The function that actually spawns things in."
 	);
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Spawn, RandomSpawn, "func_randomspawn" )
 	{
-      { &EV_Activate,                   ToggleSpawn },
-      { &EV_RandomSpawn_MinTime,        MinTime },
-      { &EV_RandomSpawn_MaxTime,        MaxTime },
-      { &EV_RandomSpawn_Think,          Think },
-      { NULL, NULL }
+		//{ &EV_Activate,					ToggleSpawn },
+		{ &EV_Activate,						&ToggleSpawn },
+		{ &EV_RandomSpawn_MinTime,			&MinTime },
+		{ &EV_RandomSpawn_MaxTime,			&MaxTime },
+		{ &EV_RandomSpawn_Think,			&Think },
+		{ NULL, NULL }
 	};
 
 RandomSpawn::RandomSpawn()

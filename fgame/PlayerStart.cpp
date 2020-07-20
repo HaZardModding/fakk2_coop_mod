@@ -95,10 +95,12 @@ Event EV_PlayerStart_SetThread
    "Set the thread to execute when this player start is used"
    );
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Entity, PlayerStart, "info_player_start" )
 	{
-      { &EV_SetAngle,               SetAngle },
-      { &EV_PlayerStart_SetThread,  SetThread },
+		//{ &EV_SetAngle,               SetAngle },
+		{ &EV_SetAngle,					&SetAngle },
+		{ &EV_PlayerStart_SetThread,	&SetThread },
 		{ NULL, NULL }
 	};
 
@@ -158,9 +160,11 @@ Event EV_PlayerDeathmatchStart_SetArena
    "set the arena number for this starting position"
    );
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( PlayerStart, PlayerDeathmatchStart, "info_player_deathmatch" )
 	{
-      { &EV_PlayerDeathmatchStart_SetArena,   SetArena },
+		//{ &EV_PlayerDeathmatchStart_SetArena,   SetArena },
+		{ &EV_PlayerDeathmatchStart_SetArena,   &SetArena },
 		{ NULL, NULL }
 	};
 

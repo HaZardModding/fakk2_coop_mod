@@ -161,50 +161,50 @@
 #include "script.h"
 
 enum testcondition_t
-   {
-   TC_ISTRUE,     // no prefix
-   TC_ISFALSE,    // !
-   TC_EDGETRUE,   // +
-   TC_EDGEFALSE   // -
-   };
+{
+	TC_ISTRUE,     // no prefix
+	TC_ISFALSE,    // !
+	TC_EDGETRUE,   // +
+	TC_EDGEFALSE   // -
+};
 
-enum movecontrol_t 
-   {
-   MOVECONTROL_USER,       // Quake style
-   MOVECONTROL_LEGS,       // Quake style, legs state system active
-   MOVECONTROL_ANIM,       // move based on animation, with full collision testing
-   MOVECONTROL_ABSOLUTE,   // move based on animation, with full collision testing but no turning
-   MOVECONTROL_HANGING,    // move based on animation, with full collision testing, hanging
-   MOVECONTROL_WALLHUG,    // move based on animation, with full collision testing, hanging
-   MOVECONTROL_MONKEYBARS, // move based on animation, with full collision testing, monkey bars
-   MOVECONTROL_PIPECRAWL,  // move based on animation, with full collision testing, crawling on pipe
-   MOVECONTROL_PIPEHANG,   // move based on animation, with full collision testing, hanging from pipe
-   MOVECONTROL_STEPUP,
-   MOVECONTROL_ROPE_GRAB,
-   MOVECONTROL_ROPE_RELEASE,
-   MOVECONTROL_ROPE_MOVE,
+enum movecontrol_t
+{
+	MOVECONTROL_USER,       // Quake style
+	MOVECONTROL_LEGS,       // Quake style, legs state system active
+	MOVECONTROL_ANIM,       // move based on animation, with full collision testing
+	MOVECONTROL_ABSOLUTE,   // move based on animation, with full collision testing but no turning
+	MOVECONTROL_HANGING,    // move based on animation, with full collision testing, hanging
+	MOVECONTROL_WALLHUG,    // move based on animation, with full collision testing, hanging
+	MOVECONTROL_MONKEYBARS, // move based on animation, with full collision testing, monkey bars
+	MOVECONTROL_PIPECRAWL,  // move based on animation, with full collision testing, crawling on pipe
+	MOVECONTROL_PIPEHANG,   // move based on animation, with full collision testing, hanging from pipe
+	MOVECONTROL_STEPUP,
+	MOVECONTROL_ROPE_GRAB,
+	MOVECONTROL_ROPE_RELEASE,
+	MOVECONTROL_ROPE_MOVE,
 	MOVECONTROL_PICKUPENEMY,
-   MOVECONTROL_PUSH,
-   MOVECONTROL_CLIMBWALL,
-   MOVECONTROL_USEANIM,
-   MOVECONTROL_CROUCH,
-   MOVECONTROL_LOOPUSEANIM,
-   MOVECONTROL_USEOBJECT,
-   MOVECONTROL_COOLOBJECT,
-   MOVECONTROL_FAKEPLAYER
-   };
+	MOVECONTROL_PUSH,
+	MOVECONTROL_CLIMBWALL,
+	MOVECONTROL_USEANIM,
+	MOVECONTROL_CROUCH,
+	MOVECONTROL_LOOPUSEANIM,
+	MOVECONTROL_USEOBJECT,
+	MOVECONTROL_COOLOBJECT,
+	MOVECONTROL_FAKEPLAYER
+};
 
-enum cameratype_t 
-   {
-   CAMERA_TOPDOWN,
-   CAMERA_BEHIND,
-   CAMERA_FRONT,
-   CAMERA_SIDE,
-   CAMERA_BEHIND_FIXED,
-   CAMERA_SIDE_LEFT,
-   CAMERA_SIDE_RIGHT,
-   CAMERA_BEHIND_NOPITCH
-   };
+enum cameratype_t
+{
+	CAMERA_TOPDOWN,
+	CAMERA_BEHIND,
+	CAMERA_FRONT,
+	CAMERA_SIDE,
+	CAMERA_BEHIND_FIXED,
+	CAMERA_SIDE_LEFT,
+	CAMERA_SIDE_RIGHT,
+	CAMERA_BEHIND_NOPITCH
+};
 
 #define DEFAULT_MOVETYPE   MOVECONTROL_LEGS
 #define DEFAULT_CAMERA     CAMERA_BEHIND
@@ -213,331 +213,331 @@ class Conditional;
 
 template< class Type >
 struct Condition
-	{
+{
 	const char     *name;
-   qboolean       ( Type::*func )( Conditional &condition );
-   };
+	qboolean(Type::*func)(Conditional &condition);
+};
 
 class Conditional : public Class
-   {
-   private :
-      qboolean                   result;
-      qboolean                   previous_result;
-      bool                       checked;
+{
+private:
+	qboolean                   result;
+	qboolean                   previous_result;
+	bool                       checked;
 
-   public :
-		Condition<Class>           condition;
-		Container<str>					parmList;
+public:
+	Condition<Class>           condition;
+	Container<str>					parmList;
 
-      bool                       getResult( testcondition_t test, Entity &ent );
-      const char                 *getName( void );
+	bool                       getResult(testcondition_t test, Entity &ent);
+	const char                 *getName(void);
 
-                                 Conditional( Condition<Class> &condition );
-      
-		const char						*getParm( int number );
-      void                       addParm( str parm );
-		int								numParms( void );
-		void								clearCheck( void );
-   };
+	Conditional(Condition<Class> &condition);
+
+	const char						*getParm(int number);
+	void                       addParm(str parm);
+	int								numParms(void);
+	void								clearCheck(void);
+};
 
 inline void Conditional::addParm
-   (
-   str parm
-   )
+(
+	str parm
+)
 
-   {
-   parmList.AddObject( parm );
-   }
+{
+	parmList.AddObject(parm);
+}
 
 inline const char *Conditional::getParm
-   (
-   int number
-   )
+(
+	int number
+)
 
-   {
-   if ( ( number < 1 ) || ( number > parmList.NumObjects() ) )
-      {
-      gi.Error( ERR_DROP, "Parm #%d out of range on %s condition\n", number, condition.name );
-      }
-   return parmList.ObjectAt( number ).c_str();
-   }
+{
+	if ((number < 1) || (number > parmList.NumObjects()))
+	{
+		gi.Error(ERR_DROP, "Parm #%d out of range on %s condition\n", number, condition.name);
+	}
+	return parmList.ObjectAt(number).c_str();
+}
 
 inline int Conditional::numParms
-   (
-   void
-   )
+(
+	void
+)
 
-   {
-   return parmList.NumObjects();
-   }
+{
+	return parmList.NumObjects();
+}
 
 inline void Conditional::clearCheck
-   (
-   void
-   )
+(
+	void
+)
 
-   {
-   checked = false;
-   }
+{
+	checked = false;
+}
 
 inline const char *Conditional::getName
-   (
-   void
-   )
+(
+	void
+)
 
-   {
-   return condition.name;
-   }
+{
+	return condition.name;
+}
 
 inline bool Conditional::getResult
-   (
-   testcondition_t test, 
-   Entity &ent
-   )
+(
+	testcondition_t test,
+	Entity &ent
+)
 
-   {
-   if ( condition.func && !checked )
-      {
-      checked = true;
+{
+	if (condition.func && !checked)
+	{
+		checked = true;
 		previous_result = result;
 
-		result = ( ent.*condition.func )( *this );
-      }
+		result = (ent.*condition.func)(*this);
+	}
 
-   switch( test )
-      {
-      case TC_ISFALSE :
-         return !result;
-         break;
+	switch (test)
+	{
+	case TC_ISFALSE:
+		return !result;
+		break;
 
-      case TC_EDGETRUE :
-         return result && !previous_result;
-         break;
+	case TC_EDGETRUE:
+		return result && !previous_result;
+		break;
 
-      case TC_EDGEFALSE :
-         return !result && previous_result;
-         break;
+	case TC_EDGEFALSE:
+		return !result && previous_result;
+		break;
 
-      case TC_ISTRUE :
-      default :
-         return result != qfalse;
-      }
-   }
+	case TC_ISTRUE:
+	default:
+		return result != qfalse;
+	}
+}
 
 class State;
 class StateMap;
 
 class Expression : public Class
-   {
-   private :
-      struct condition_t
-         {
-         testcondition_t      test;
-         int			         condition_index;
-         };
+{
+private:
+	struct condition_t
+	{
+		testcondition_t      test;
+		int			         condition_index;
+	};
 
-      str                     value;
-      Container<condition_t>  conditions;
+	str                     value;
+	Container<condition_t>  conditions;
 
-   public :
-                              Expression();
-                              Expression( Expression &exp );
-                              Expression( Script &script, State &state );
+public:
+	Expression();
+	Expression(Expression &exp);
+	Expression(Script &script, State &state);
 
-      void		               operator=( Expression &exp );
+	void		               operator=(Expression &exp);
 
-      bool                    getResult( State &state, Entity &ent, Container<Conditional *> *sent_conditionals );
-      const char              *getValue( void );
-   };
+	bool                    getResult(State &state, Entity &ent, Container<Conditional *> *sent_conditionals);
+	const char              *getValue(void);
+};
 
 inline void Expression::operator=
-	(
-   Expression &exp
-   )
-   
-   {
-   int i;
+(
+	Expression &exp
+	)
 
-   value = exp.value;
+{
+	int i;
 
-   conditions.FreeObjectList();
-   for( i = 1; i <= exp.conditions.NumObjects(); i++ )
-      {
-      conditions.AddObject( exp.conditions.ObjectAt( i ) );
-      }
-   }
+	value = exp.value;
+
+	conditions.FreeObjectList();
+	for (i = 1; i <= exp.conditions.NumObjects(); i++)
+	{
+		conditions.AddObject(exp.conditions.ObjectAt(i));
+	}
+}
 
 inline const char *Expression::getValue
-   (
-   void
-   )
+(
+	void
+)
 
-   {
-   return value.c_str();
-   }
+{
+	return value.c_str();
+}
 
 class State : public Class
-   {
-   private :
-      Container<int>					condition_indexes;
+{
+private:
+	Container<int>					condition_indexes;
 
-      StateMap                   &statemap;
+	StateMap                   &statemap;
 
-      str                        name;
+	str                        name;
 
-      str                        nextState;
-      movecontrol_t              movetype;
-      cameratype_t               cameratype;
+	str                        nextState;
+	movecontrol_t              movetype;
+	cameratype_t               cameratype;
 
-		str								behaviorName;
-		Container<str>					behaviorParmList;
+	str								behaviorName;
+	Container<str>					behaviorParmList;
 
-		float								minTime;
-		float								maxTime;
+	float								minTime;
+	float								maxTime;
 
-      Container<Expression>      legAnims;
-      Container<Expression>      torsoAnims;
+	Container<Expression>      legAnims;
+	Container<Expression>      torsoAnims;
 
-      Container<Expression>      states;
-      Container<str>             entryCommands;
-      Container<str>             exitCommands;
+	Container<Expression>      states;
+	Container<str>             entryCommands;
+	Container<str>             exitCommands;
 
-      void                       readNextState( Script &script );
-      void                       readMoveType( Script &script );
-      void                       readCamera( Script &script );
-      void                       readLegs( Script &script );
-      void                       readTorso( Script &script );
-		void                       readBehavior( Script &script );
-		void                       readTime( Script &script );
-      void                       readStates( Script &script );
-      void                       readCommands( Script &script, Container<str> &container );
+	void                       readNextState(Script &script);
+	void                       readMoveType(Script &script);
+	void                       readCamera(Script &script);
+	void                       readLegs(Script &script);
+	void                       readTorso(Script &script);
+	void                       readBehavior(Script &script);
+	void                       readTime(Script &script);
+	void                       readStates(Script &script);
+	void                       readCommands(Script &script, Container<str> &container);
 
-      void                       ParseAndProcessCommand( str command, Entity *target );
+	void                       ParseAndProcessCommand(str command, Entity *target);
 
-   public :
-                                 State( const char *name, Script &script, StateMap &map );
+public:
+	State(const char *name, Script &script, StateMap &map);
 
-      State                      *Evaluate( Entity &ent, Container<Conditional *> *ent_conditionals );
-      int								addCondition( const char *name, Script &script );
-      void                       CheckStates( void );
+	State                      *Evaluate(Entity &ent, Container<Conditional *> *ent_conditionals);
+	int								addCondition(const char *name, Script &script);
+	void                       CheckStates(void);
 
-      const char                 *getName( void );
+	const char                 *getName(void);
 
-      const char                 *getLegAnim( Entity &ent, Container<Conditional *> *sent_conditionals );
-      const char                 *getTorsoAnim( Entity &ent, Container<Conditional *> *sent_conditionals );
-		const char                 *getBehaviorName( void );
-      State                      *getNextState( void );
-      movecontrol_t              getMoveType( void );
-      cameratype_t               getCameraType( void );
-      qboolean                   setCameraType( str ctype );
+	const char                 *getLegAnim(Entity &ent, Container<Conditional *> *sent_conditionals);
+	const char                 *getTorsoAnim(Entity &ent, Container<Conditional *> *sent_conditionals);
+	const char                 *getBehaviorName(void);
+	State                      *getNextState(void);
+	movecontrol_t              getMoveType(void);
+	cameratype_t               getCameraType(void);
+	qboolean                   setCameraType(str ctype);
 
-		const char						*getBehaviorParm( int number=1 );
-      void                       addBehaviorParm( str parm );
-		int								numBehaviorParms( void );
+	const char						*getBehaviorParm(int number = 1);
+	void                       addBehaviorParm(str parm);
+	int								numBehaviorParms(void);
 
-		float								getMinTime( void );
-		float								getMaxTime( void );
-      void                       ProcessEntryCommands( Entity *target );
-      void                       ProcessExitCommands( Entity *target );
-      void                       GetLegAnims( Container<const char *> *c );
-      void                       GetTorsoAnims( Container<const char *> *c );
-   };
+	float								getMinTime(void);
+	float								getMaxTime(void);
+	void                       ProcessEntryCommands(Entity *target);
+	void                       ProcessExitCommands(Entity *target);
+	void                       GetLegAnims(Container<const char *> *c);
+	void                       GetTorsoAnims(Container<const char *> *c);
+};
 
 inline void State::addBehaviorParm
-   (
-   str parm
-   )
+(
+	str parm
+)
 
-   {
-   behaviorParmList.AddObject( parm );
-   }
+{
+	behaviorParmList.AddObject(parm);
+}
 
 inline const char *State::getBehaviorParm
-   (
-   int number
-   )
+(
+	int number
+)
 
-   {
-   return behaviorParmList.ObjectAt( number ).c_str();
-   }
+{
+	return behaviorParmList.ObjectAt(number).c_str();
+}
 
 inline int State::numBehaviorParms
-   (
-   void
-   )
+(
+	void
+)
 
-   {
-   return behaviorParmList.NumObjects();
-   }
+{
+	return behaviorParmList.NumObjects();
+}
 
 class StateMap : public Class
-   {
-   private :
-      Container<State *>         stateList;
-      Condition<Class>           *current_conditions;
-      Container<Conditional *>   *current_conditionals;
-		str								filename;
-      
-   public :
-                                 StateMap( const char *filename, Condition<Class> *conditions, Container<Conditional *> *conditionals );
-                                 ~StateMap();
+{
+private:
+	Container<State *>         stateList;
+	Condition<Class>           *current_conditions;
+	Container<Conditional *>   *current_conditionals;
+	str								filename;
 
-      Condition<Class>           *getCondition( const char *name );
-      int								findConditional( Conditional *condition );
-      int	                     addConditional( Conditional *condition );
-      Conditional                *getConditional( const char *name );
-      void                       GetAllAnims( Container<const char *> *c );
-      State                      *FindState( const char *name );
-		const char						*Filename();
-   };
+public:
+	StateMap(const char *filename, Condition<Class> *conditions, Container<Conditional *> *conditionals);
+	~StateMap();
+
+	Condition<Class>           *getCondition(const char *name);
+	int								findConditional(Conditional *condition);
+	int	                     addConditional(Conditional *condition);
+	Conditional                *getConditional(const char *name);
+	void                       GetAllAnims(Container<const char *> *c);
+	State                      *FindState(const char *name);
+	const char						*Filename();
+};
 
 inline const char *StateMap::Filename
-   (
-   void
-   )
+(
+	void
+)
 
-   {
-   return filename.c_str();
-   }
+{
+	return filename.c_str();
+}
 
 inline const char *State::getName
-   (
-   void
-   )
+(
+	void
+)
 
-   {
-   return name.c_str();
-   }
+{
+	return name.c_str();
+}
 
 inline State *State::getNextState
-   (
-   void
-   )
+(
+	void
+)
 
-   {
-   return statemap.FindState( nextState.c_str() );
-   }
+{
+	return statemap.FindState(nextState.c_str());
+}
 
 inline movecontrol_t State::getMoveType
-   (
-   void
-   )
+(
+	void
+)
 
-   {
-   return movetype;
-   }
+{
+	return movetype;
+}
 
 inline cameratype_t State::getCameraType
-   (
-   void
-   )
+(
+	void
+)
 
-   {
-   return cameratype;
-   }
+{
+	return cameratype;
+}
 
-void ClearCachedStatemaps( void );
-StateMap *GetStatemap( str filename, Condition<Class> *conditions,  Container<Conditional *> *conditionals, qboolean reload, qboolean cache_only = false );
-void CacheStatemap( str filename, Condition<Class> *conditions	);
+void ClearCachedStatemaps(void);
+StateMap *GetStatemap(str filename, Condition<Class> *conditions, Container<Conditional *> *conditionals, qboolean reload, qboolean cache_only = false);
+void CacheStatemap(str filename, Condition<Class> *conditions);
 
 #endif /* !__CHARACTERSTATE_H__ */

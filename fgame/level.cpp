@@ -400,7 +400,9 @@ void Level::SpawnEntities
    // Init the level variables
    Init();
 
-   spawnpos = strchr( themapname, '$' );
+   //HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
+   //spawnpos = strchr( themapname, '$' );
+   spawnpos = (char *)strchr( themapname, '$' );
    if ( spawnpos )
       {
       mapname = str( themapname, 0, spawnpos - themapname );

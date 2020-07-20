@@ -911,40 +911,41 @@ Event EV_Sentient_CheckAnimations
 	"Check the animations in the .tik file versus the statefile"
 	);
 
-
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Animate, Sentient, NULL )
    {
-	   { &EV_Sentient_Attack,				   FireWeapon },
-	   { &EV_Sentient_StopFire,				StopFireWeapon },
-      { &EV_Sentient_Charge,				   ChargeWeapon },
-      { &EV_Sentient_ReleaseAttack,		   ReleaseFireWeapon },
-	   { &EV_Sentient_GiveAmmo,			   EventGiveAmmo },
-	   { &EV_Sentient_GiveWeapon,			   EventGiveItem },
-      { &EV_Sentient_GiveArmor,			   EventGiveItem },
-      { &EV_Sentient_GiveItem,            EventGiveItem },
-      { &EV_Sentient_GiveHealth,          EventGiveHealth },
-	   { &EV_Sentient_Take,		      	   EventTake },
-      { &EV_Sentient_SetBloodModel,			SetBloodModel },
-      { &EV_Sentient_GiveTargetname,      EventGiveTargetname },
-      { &EV_Damage,                       ArmorDamage },
-  		{ &EV_Sentient_TurnOffShadow,		   TurnOffShadow },
-		{ &EV_Sentient_TurnOnShadow,		   TurnOnShadow },
-		{ &EV_Sentient_AddImmunity,	      AddImmunity },
-		{ &EV_Sentient_RemoveImmunity,	   RemoveImmunity },
-		{ &EV_Sentient_UpdateOffsetColor,	UpdateOffsetColor },
-		{ &EV_Sentient_JumpXY,				   JumpXY },
-		{ &EV_Sentient_MeleeAttackStart,		MeleeAttackStart },
-		{ &EV_Sentient_MeleeAttackEnd,		MeleeAttackEnd },
-		{ &EV_Sentient_BlockStart,				BlockStart },
-		{ &EV_Sentient_BlockEnd,				BlockEnd },
-		{ &EV_Sentient_StunStart,				StunStart },
-		{ &EV_Sentient_StunEnd,					StunEnd },
-		{ &EV_Sentient_SetMaxMouthAngle,		SetMaxMouthAngle },
-		{ &EV_Sentient_OnFire,					OnFire },
-		{ &EV_Sentient_StopOnFire,					StopOnFire },
-		{ &EV_Sentient_SpawnBloodyGibs,		SpawnBloodyGibs },
-		{ &EV_Sentient_SetMaxGibs,				SetMaxGibs },
-		{ &EV_Sentient_CheckAnimations,  	CheckAnimations },
+		//{ &EV_Sentient_Attack,				FireWeapon },
+		{ &EV_Sentient_Attack,					&FireWeapon },
+		{ &EV_Sentient_StopFire,				&StopFireWeapon },
+		{ &EV_Sentient_Charge,					&ChargeWeapon },
+		{ &EV_Sentient_ReleaseAttack,			&ReleaseFireWeapon },
+		{ &EV_Sentient_GiveAmmo,				&EventGiveAmmo },
+		{ &EV_Sentient_GiveWeapon,				&EventGiveItem },
+		{ &EV_Sentient_GiveArmor,				&EventGiveItem },
+		{ &EV_Sentient_GiveItem,				&EventGiveItem },
+		{ &EV_Sentient_GiveHealth,				&EventGiveHealth },
+		{ &EV_Sentient_Take,					&EventTake },
+		{ &EV_Sentient_SetBloodModel,			&SetBloodModel },
+		{ &EV_Sentient_GiveTargetname,			&EventGiveTargetname },
+		{ &EV_Damage,							&ArmorDamage },
+		{ &EV_Sentient_TurnOffShadow,			&TurnOffShadow },
+		{ &EV_Sentient_TurnOnShadow,			&TurnOnShadow },
+		{ &EV_Sentient_AddImmunity,				&AddImmunity },
+		{ &EV_Sentient_RemoveImmunity,			&RemoveImmunity },
+		{ &EV_Sentient_UpdateOffsetColor,		&UpdateOffsetColor },
+		{ &EV_Sentient_JumpXY,					&JumpXY },
+		{ &EV_Sentient_MeleeAttackStart,		&MeleeAttackStart },
+		{ &EV_Sentient_MeleeAttackEnd,			&MeleeAttackEnd },
+		{ &EV_Sentient_BlockStart,				&BlockStart },
+		{ &EV_Sentient_BlockEnd,				&BlockEnd },
+		{ &EV_Sentient_StunStart,				&StunStart },
+		{ &EV_Sentient_StunEnd,					&StunEnd },
+		{ &EV_Sentient_SetMaxMouthAngle,		&SetMaxMouthAngle },
+		{ &EV_Sentient_OnFire,					&OnFire },
+		{ &EV_Sentient_StopOnFire,				&StopOnFire },
+		{ &EV_Sentient_SpawnBloodyGibs,			&SpawnBloodyGibs },
+		{ &EV_Sentient_SetMaxGibs,				&SetMaxGibs },
+		{ &EV_Sentient_CheckAnimations,			&CheckAnimations },
 		{ NULL, NULL }
 	};
 
@@ -952,7 +953,12 @@ Container<Sentient *> SentientList;
 
 Sentient::Sentient()
 	{
-	SentientList.AddObject( ( Sentient * )this );
+	//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
+	//SentientList.AddObject( ( Sentient * )this );
+	Sentient *sentient;
+	sentient = this;
+	SentientList.AddObject( sentient );
+
    setContents( CONTENTS_BODY );
 	inventory.ClearObjectList();
 
@@ -983,7 +989,12 @@ Sentient::Sentient()
 
 Sentient::~Sentient()
 	{
-	SentientList.RemoveObject( ( Sentient * )this );
+	//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
+	//SentientList.RemoveObject( (Sentient *)this );
+	Sentient *sentient;
+	sentient = this;
+	SentientList.RemoveObject( sentient );
+
 	FreeInventory();
 	}
 

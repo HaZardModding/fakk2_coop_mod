@@ -14,9 +14,10 @@ Event EV_Emitter_EmitterName
    "Emitter to use"
 	);
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Entity, Emitter, "func_emitter" )
    {
-      { &EV_Emitter_EmitterName,    EmitterName },
+      { &EV_Emitter_EmitterName,    &EmitterName },
    };
 
 Emitter::Emitter
@@ -99,10 +100,12 @@ Event EV_PuffDaddy_Idle
    "Animates the puff daddy."
 	);
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Animate, PuffDaddy, "plant_puffdaddy" )
 	{
-      { &EV_Touch,               Touch },
-      { &EV_PuffDaddy_Idle,      Idle },
+      //{ &EV_Touch,             Touch },
+      { &EV_Touch,               &Touch },
+      { &EV_PuffDaddy_Idle,      &Idle },
       { NULL, NULL }
 	};
 

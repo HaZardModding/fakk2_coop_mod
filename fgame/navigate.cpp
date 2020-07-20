@@ -427,19 +427,20 @@ Event EV_Path_SetTarget
    "Sets the target for this path node."
 	);
 
-CLASS_DECLARATION( Listener, PathNode, "info_pathnode" )
-	{
-		{ &EV_Path_FindChildren,      FindChildren },
-      { &EV_Path_FindEntities,      FindEntities },
-      { &EV_Path_SetNodeFlags,      SetNodeFlags },
-      { &EV_Path_SetOriginEvent,    SetOriginEvent },
-      { &EV_SetAngle,               SetAngle },
-      { &EV_Path_SetAngles,         SetAngles },
-      { &EV_Path_SetAnim,           SetAnim },
-      { &EV_Path_SetTargetname,     SetTargetname },
-      { &EV_Path_SetTarget,         SetTarget },
-		{ NULL, NULL }
-	};
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
+CLASS_DECLARATION(Listener, PathNode, "info_pathnode")
+{
+	{ &EV_Path_FindChildren,		&FindChildren },
+	{ &EV_Path_FindEntities,		&FindEntities },
+	{ &EV_Path_SetNodeFlags,		&SetNodeFlags },
+	{ &EV_Path_SetOriginEvent,		&SetOriginEvent },
+	{ &EV_SetAngle,					&SetAngle },
+	{ &EV_Path_SetAngles,			&SetAngles },
+	{ &EV_Path_SetAnim,				&SetAnim },
+	{ &EV_Path_SetTargetname,		&SetTargetname },
+	{ &EV_Path_SetTarget,			&SetTarget },
+	{ NULL, NULL }
+};
 
 static Vector     pathNodesChecksum;
 static int        numLoadNodes = 0;
@@ -1628,19 +1629,19 @@ int MapCell::NumNodes
                           Jim  a
 */
 
-CLASS_DECLARATION( Class, PathSearch, NULL )
-	{
-		{ &EV_AI_SavePaths,				SavePathsEvent },
-		{ &EV_AI_LoadNodes,				LoadNodes },
-		{ &EV_AI_SaveNodes,				SaveNodes },
-		{ &EV_AI_ClearNodes,				ClearNodes },
-      { &EV_AI_SetNodeFlags,        SetNodeFlagsEvent },
-      { &EV_AI_RecalcPaths,         RecalcPathsEvent },
-      { &EV_AI_CalcPath,            CalcPathEvent },
-      { &EV_AI_DisconnectPath,      DisconnectPathEvent },
-
-		{ NULL, NULL }
-	};
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
+CLASS_DECLARATION(Class, PathSearch, NULL)
+{
+	{ &EV_AI_SavePaths, &SavePathsEvent },
+	{ &EV_AI_LoadNodes,				&LoadNodes },
+	{ &EV_AI_SaveNodes,				&SaveNodes },
+	{ &EV_AI_ClearNodes,			&ClearNodes },
+	{ &EV_AI_SetNodeFlags,			&SetNodeFlagsEvent },
+	{ &EV_AI_RecalcPaths,			&RecalcPathsEvent },
+	{ &EV_AI_CalcPath,				&CalcPathEvent },
+	{ &EV_AI_DisconnectPath,		&DisconnectPathEvent },
+	{ NULL, NULL }
+};
 
 
 PathSearch::PathSearch()

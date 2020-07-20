@@ -18,9 +18,10 @@ Event EV_CTF_SetTargetLocationString("message", EV_DEFAULT, "s", NULL, "'message
 //
 //event handling
 //
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION(Entity, CTF_TargetLocation, "ctf_target_location")
 {
-	{&EV_CTF_SetTargetLocationString, SetLocationString},
+	{&EV_CTF_SetTargetLocationString, &SetLocationString},
 	{NULL, NULL}
 };
 

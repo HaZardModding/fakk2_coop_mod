@@ -46,7 +46,8 @@ namespace CTF {
 class VoteSystem  
 {
 	VoteSystem(const VoteSystem&); //prevent copy
-	operator=(const VoteSystem&); //prevent assignment
+	//chrissstrahl - codefix
+	//operator=(const VoteSystem&); //prevent assignment
 
 	VoteSystem(); // Need to access via 'Instance()'
 

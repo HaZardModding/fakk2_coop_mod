@@ -53,9 +53,10 @@
 #include "edenwater.h"
 #include "player.h"
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Item, EdenWater, "item_edenwater" )
 	{
-      { &EV_Item_Pickup,   PickupEdenWater },
+      { &EV_Item_Pickup,   &PickupEdenWater },
 		{ NULL, NULL }
 	};
 

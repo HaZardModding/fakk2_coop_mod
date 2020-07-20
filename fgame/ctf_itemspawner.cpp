@@ -25,13 +25,14 @@ Event EV_CTF_Spawner_Commands("spawn_commands",	EV_DEFAULT,	"s", NULL,  "passes 
 Event EV_CTF_Spawner_SpawnItem("spawnitem",		EV_FROM_CODE, NULL, NULL,	"spawns a random item from our list");
 
 //Messages
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION(Item, CTF_ItemSpawner, "ctf_item_spawner")
 {
-	{&EV_CTF_Spawner_AddItems,		AddSpawnItems	},
-	{&EV_CTF_Spawner_SpawnItem,		SpawnRandomItem	},
-	{&EV_CTF_Spawner_SetDelay,		SetDelay		},
-	{&EV_CTF_Spawner_SetRand,		SetRandom		},
-	{&EV_CTF_Spawner_Commands,		SetCommands		},
+	{&EV_CTF_Spawner_AddItems,		&AddSpawnItems	},
+	{&EV_CTF_Spawner_SpawnItem,		&SpawnRandomItem	},
+	{&EV_CTF_Spawner_SetDelay,		&SetDelay		},
+	{&EV_CTF_Spawner_SetRand,		&SetRandom		},
+	{&EV_CTF_Spawner_Commands,		&SetCommands	},
 	{NULL, NULL}
 };
 

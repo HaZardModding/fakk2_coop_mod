@@ -72,9 +72,6 @@ class Teams : public Default
 {
 	Teams(const std::string& cmd, const std::string& args);
 
-	// Creation function used by the vote factory
-		static Default* Create(const std::string& cmd, const std::string& args);
-
 	// True if it possible for this vote command to work
 		virtual bool CanExecute() const;
 
@@ -83,6 +80,11 @@ class Teams : public Default
 
 	// Returns a string containing the reason that this command can't be executedon
 		virtual std::string GetReason() const;
+	
+		//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix - not sure if that is right - fixme
+		public:
+		// Creation function used by the vote factory
+		static Default* Create(const std::string& cmd, const std::string& args);
 };
 
 } //~namespace VoteCommand

@@ -101,10 +101,12 @@
 #include "weaputils.h"
 #include "player.h"
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( InventoryItem, HealthInventoryItem, "" )
    {
-      { &EV_InventoryItem_Use,         Use },
-	   { NULL, NULL }
+		//{ &EV_InventoryItem_Use,			Use },
+		{ &EV_InventoryItem_Use,			&Use },
+		{ NULL, NULL }
    };
 
 
@@ -161,10 +163,12 @@ void HealthInventoryItem::Use
    PostEvent( EV_Remove, 0 );
    }
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( InventoryItem, WaterInventoryItem, "" )
    {
-      { &EV_InventoryItem_Use,         Use },
-	   { NULL, NULL }
+		//{ &EV_InventoryItem_Use,         Use },
+		{ &EV_InventoryItem_Use,         &Use },
+		{ NULL, NULL }
    };
 
 
@@ -207,10 +211,11 @@ void WaterInventoryItem::Use
    PostEvent( EV_Remove, 0 );
    }
 
-
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Item, Health, "health_020" )
 	{
-      { &EV_Item_Pickup,      				PickupHealth },
+		//{ &EV_Item_Pickup,		PickupHealth },
+		{ &EV_Item_Pickup,			&PickupHealth },
 		{ NULL, NULL }
 	};
 
@@ -271,11 +276,13 @@ Event EV_HealthPlant_SetFallVelocity
    "Sets the fall velocity for this health plant."
 	);
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Health, HealthPlant, NULL )
 	{
-		{ &EV_Trigger_Effect,						Touch },
-		{ &EV_HealthPlant_SetFallVelocity,		SetFallVelocity },
-		{ NULL,											NULL }
+		//{ &EV_Trigger_Effect,						Touch },
+		{ &EV_Trigger_Effect,						&Touch },
+		{ &EV_HealthPlant_SetFallVelocity,			&SetFallVelocity },
+		{ NULL, NULL }
 	};
 
 HealthPlant::HealthPlant()

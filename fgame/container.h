@@ -303,13 +303,10 @@ int Container<Type>::IndexOfObject
 	)
 
 	{
-	int i;
-
-	for( i = 0; i < numobjects; i++ )
-		{
-		if ( objlist[ i ] == obj )
-			{
-			return i + 1;
+		//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
+		for( int i = 0; i < numobjects; i++ ){
+			if (objlist[i] == obj){
+				return i + 1;
 			}
 		}
 

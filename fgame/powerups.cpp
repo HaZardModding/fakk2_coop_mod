@@ -103,16 +103,18 @@ Event EV_CircleOfProtection_Knockback
    "Set the knockback of the damage effect"
    );
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
+//{ &EV_InventoryItem_Use, Use }, -fixed multiple occurences
 CLASS_DECLARATION( InventoryItem, CircleOfProtection, "" )
    {
-      { &EV_InventoryItem_Use,                     Use },
-      { &EV_CircleOfProtection_Deactivate,         Deactivate },
-      { &EV_CircleOfProtection_DoDamage,           DoDamage },
-      { &EV_CircleOfProtection_MinRadius,          MinRadius },
-      { &EV_CircleOfProtection_MaxRadius,          MaxRadius },
-      { &EV_CircleOfProtection_Damage,             SetDamage },
-      { &EV_CircleOfProtection_DamageDelay,        DamageDelay },
-      { &EV_CircleOfProtection_Knockback,          Knockback },
+      { &EV_InventoryItem_Use,						&Use },
+      { &EV_CircleOfProtection_Deactivate,			&Deactivate },
+      { &EV_CircleOfProtection_DoDamage,			&DoDamage },
+      { &EV_CircleOfProtection_MinRadius,			&MinRadius },
+      { &EV_CircleOfProtection_MaxRadius,			&MaxRadius },
+      { &EV_CircleOfProtection_Damage,				&SetDamage },
+      { &EV_CircleOfProtection_DamageDelay,			&DamageDelay },
+      { &EV_CircleOfProtection_Knockback,			&Knockback },
 	   { NULL, NULL }
    };
 

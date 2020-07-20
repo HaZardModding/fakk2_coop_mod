@@ -29,14 +29,17 @@ VoteCommandFactory::VoteCommandFactory()
 	m_factMap.insert(FactMap::value_type("KEXTMAP", VoteCommand::NextMap::Create));
 	m_factMap.insert(FactMap::value_type("TEAMS", VoteCommand::Teams::Create));
 	m_factMap.insert(FactMap::value_type("BALANCE_TEAMS", VoteCommand::Teams::Create));
-
 }
 
 VoteCommand::Default* VoteCommandFactory::Create(const std::string& command)
 {
 	// Convert the single string into two separate strings then call the overloaded version
 	std::string::const_iterator endCmd = std::find_if(command.begin(), command.end(), isspace);
-	std::string::const_iterator beginArgs = std::find_if(endCmd, command.end(), std::not1(std::ptr_fun(isspace)));
+	
+	//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix - not sure if that is right - fixme
+	//std::string::const_iterator beginArgs = std::find_if(endCmd, command.end(), std::not1(std::ptr_fun(isspace)));
+	std::string::const_iterator beginArgs = std::find_if(endCmd, command.end(), !(isspace));
+
 	std::string::const_iterator endArgs = std::find_if(beginArgs, command.end(), isspace);
 
 	std::string cmd(command.begin(), endCmd);

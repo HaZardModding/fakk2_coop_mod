@@ -700,17 +700,19 @@ Event EV_SplinePath_SetFadeTime
    "Sets the fadetime at this node."
 	);
 
+//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
 CLASS_DECLARATION( Entity, SplinePath, "info_splinepath" )
 	{
-      { &EV_SplinePath_Create,            CreatePath },
-      { &EV_SplinePath_Loop,              SetLoop },
-      { &EV_SplinePath_Speed,             SetSpeed },
-      { &EV_SplinePath_SetTriggerTarget,  SetTriggerTarget },
-      { &EV_SplinePath_SetThread,         SetThread },
-      { &EV_SplinePath_SetWatch,          SetWatch },
-      { &EV_SplinePath_SetFov,            SetFov },
-      { &EV_SplinePath_SetFadeTime,       SetFadeTime },
-      { NULL, NULL }
+		//{ &EV_SplinePath_Create,				CreatePath },
+		{ &EV_SplinePath_Create,				&CreatePath },
+		{ &EV_SplinePath_Loop,					&SetLoop },
+		{ &EV_SplinePath_Speed,					&SetSpeed },
+		{ &EV_SplinePath_SetTriggerTarget,		&SetTriggerTarget },
+		{ &EV_SplinePath_SetThread,				&SetThread },
+		{ &EV_SplinePath_SetWatch,				&SetWatch },
+		{ &EV_SplinePath_SetFov,				&SetFov },
+		{ &EV_SplinePath_SetFadeTime,			&SetFadeTime },
+		{ NULL, NULL }
    };
 
 SplinePath::SplinePath()
