@@ -1,0 +1,478 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: cgame - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\Wilka\LOCALS~1\Temp\RSP56.tmp" with contents
+[
+/nologo /G5 /MT /W3 /GX /Zi /O2 /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "CGAME_DLL" /FR"Release/" /Fp"Release/cgame.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c 
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\bg_misc.c"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\bg_pmove.c"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\cg_beam.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\cg_commands.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\cg_consolecmds.c"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\cg_drawtools.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\cg_ents.c"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\cg_lightstyles.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\cg_main.c"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\cg_marks.c"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\cg_modelanim.c"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\cg_player.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\cg_playerstate.c"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\cg_predict.c"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\cg_servercmds.c"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\cg_snapshot.c"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\cg_sound.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\cg_specialfx.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\cg_swipe.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\cg_testemitter.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\cg_ui.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\cg_view.c"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\class.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\listener.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\q_math.c"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\q_mathsys.c"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\q_shared.c"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\script.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\str.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\win32\win_bounds.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\cg_ctf_view.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\ctf_2d.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\ctf_cg_drawtools.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\CTF_ItemPickup.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\ctf_msg.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\ctf_reward.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\cgame\ctf_tech.cpp"
+]
+Creating command line "xicl6.exe @C:\DOCUME~1\Wilka\LOCALS~1\Temp\RSP56.tmp" 
+Creating temporary file "C:\DOCUME~1\Wilka\LOCALS~1\Temp\RSP57.tmp" with contents
+[
+/nologo /base:"0x30000000" /subsystem:windows /dll /incremental:no /pdb:"Release/cgamex86.pdb" /map:"Release/cgamex86.map" /machine:I386 /def:".\cgame.def" /out:"d:\games\fakk2\ctf\cgamex86.dll" /implib:"Release/cgamex86.lib" 
+".\Release\bg_misc.obj"
+".\Release\bg_pmove.obj"
+".\Release\cg_beam.obj"
+".\Release\cg_commands.obj"
+".\Release\cg_consolecmds.obj"
+".\Release\cg_drawtools.obj"
+".\Release\cg_ents.obj"
+".\Release\cg_lightstyles.obj"
+".\Release\cg_main.obj"
+".\Release\cg_marks.obj"
+".\Release\cg_modelanim.obj"
+".\Release\cg_player.obj"
+".\Release\cg_playerstate.obj"
+".\Release\cg_predict.obj"
+".\Release\cg_servercmds.obj"
+".\Release\cg_snapshot.obj"
+".\Release\cg_sound.obj"
+".\Release\cg_specialfx.obj"
+".\Release\cg_swipe.obj"
+".\Release\cg_testemitter.obj"
+".\Release\cg_ui.obj"
+".\Release\cg_view.obj"
+".\Release\class.obj"
+".\Release\listener.obj"
+".\Release\q_math.obj"
+".\Release\q_mathsys.obj"
+".\Release\q_shared.obj"
+".\Release\script.obj"
+".\Release\str.obj"
+".\Release\win_bounds.obj"
+".\Release\cg_ctf_view.obj"
+".\Release\ctf_2d.obj"
+".\Release\ctf_cg_drawtools.obj"
+".\Release\CTF_ItemPickup.obj"
+".\Release\ctf_msg.obj"
+".\Release\ctf_reward.obj"
+".\Release\ctf_tech.obj"
+]
+Creating command line "xilink6.exe @C:\DOCUME~1\Wilka\LOCALS~1\Temp\RSP57.tmp"
+<h3>Output Window</h3>
+Compiling...
+bg_misc.c
+bg_pmove.c
+cg_beam.cpp
+cg_commands.cpp
+cg_consolecmds.c
+cg_drawtools.cpp
+cg_ents.c
+cg_lightstyles.cpp
+cg_main.c
+cg_marks.c
+cg_modelanim.c
+cg_player.cpp
+cg_playerstate.c
+cg_predict.c
+cg_servercmds.c
+cg_snapshot.c
+cg_sound.cpp
+cg_specialfx.cpp
+cg_swipe.cpp
+cg_testemitter.cpp
+cg_ui.cpp
+cg_view.c
+class.cpp
+listener.cpp
+q_math.c
+q_mathsys.c
+q_shared.c
+script.cpp
+str.cpp
+win_bounds.cpp
+cg_ctf_view.cpp
+ctf_2d.cpp
+ctf_cg_drawtools.cpp
+CTF_ItemPickup.cpp
+ctf_msg.cpp
+ctf_reward.cpp
+ctf_tech.cpp
+Spawn Time 0:53.3
+Linking...
+   Creating library Release/cgamex86.lib and object Release/cgamex86.exp
+Spawn Time 0:02.3
+
+
+
+<h3>Results</h3>
+cgamex86.dll - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: fgame - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\Wilka\LOCALS~1\Temp\RSP5D.tmp" with contents
+[
+/nologo /MT /W3 /GX /Zi /O2 /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "FGAME_EXPORTS" /D "GAME_DLL" /FR"./Release/" /Fp"./Release/fgame.pch" /YX /Fo"./Release/" /Fd"./Release/" /FD /c 
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\actor.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\ammo.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\animate.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\archive.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\armor.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\beam.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\behavior.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\bg_misc.c"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\bg_pmove.c"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\bspline.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\camera.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\characterstate.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\class.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\clusterbomb.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\crossbow.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\debuglines.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\decals.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\dm_manager.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\doors.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\earthquake.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\edenwater.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\entity.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\explosion.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\flamethrower.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\flashbang.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\g_main.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\g_phys.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\g_spawn.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\g_utils.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\game.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\gamecmds.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\gamecvars.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\gamescript.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\gibs.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\goo.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\gravpath.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\health.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\hornofconjuring.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\inventoryitem.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\ipfilter.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\item.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\level.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\light.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\listener.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\misc.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\mover.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\nature.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\navigate.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\object.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\path.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\player.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\player_combat.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\player_util.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\PlayerStart.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\portal.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\powerups.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\q_math.c"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\q_mathsys.c"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\q_shared.c"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\rope.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\script.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\scriptmaster.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\scriptslave.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\scriptvariable.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\sentient.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\shield.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\soulsucker.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\soundman.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\spawners.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\specialfx.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\Spit.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\steering.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\str.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\sword.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\trigger.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\vehicle.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\viewthing.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\weapon.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\weaputils.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\win32\win_bounds.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\worldspawn.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\CTF_DeadBody.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\ctf_flag.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\ctf_global.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\CTF_InventoryItem.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\ctf_itemspawner.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\ctf_manager.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\CTF_Obituary.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\ctf_player.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\CTF_PlayerStart.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\CTF_TargetGive.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\CTF_TargetLocation.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\CTF_Team.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\CTF_Tech.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\ItemSpawner.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\OtherVoteCommands.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\Vote.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\VoteCommand.cpp"
+"E:\Visual C Projects\Game Code\FAKK2\CTF\fgame\VoteCommandFactory.cpp"
+]
+Creating command line "xicl6.exe @C:\DOCUME~1\Wilka\LOCALS~1\Temp\RSP5D.tmp" 
+Creating temporary file "C:\DOCUME~1\Wilka\LOCALS~1\Temp\RSP5E.tmp" with contents
+[
+kernel32.lib user32.lib winmm.lib /nologo /dll /incremental:no /pdb:"./Release/gamex86.pdb" /map:"./Release/gamex86.map" /machine:I386 /def:".\game.def" /out:"d:\games\fakk2\ctf\gamex86.dll" /implib:"./Release/gamex86.lib" 
+".\Release\actor.obj"
+".\Release\ammo.obj"
+".\Release\animate.obj"
+".\Release\archive.obj"
+".\Release\armor.obj"
+".\Release\beam.obj"
+".\Release\behavior.obj"
+".\Release\bg_misc.obj"
+".\Release\bg_pmove.obj"
+".\Release\bspline.obj"
+".\Release\camera.obj"
+".\Release\characterstate.obj"
+".\Release\class.obj"
+".\Release\clusterbomb.obj"
+".\Release\crossbow.obj"
+".\Release\debuglines.obj"
+".\Release\decals.obj"
+".\Release\dm_manager.obj"
+".\Release\doors.obj"
+".\Release\earthquake.obj"
+".\Release\edenwater.obj"
+".\Release\entity.obj"
+".\Release\explosion.obj"
+".\Release\flamethrower.obj"
+".\Release\flashbang.obj"
+".\Release\g_main.obj"
+".\Release\g_phys.obj"
+".\Release\g_spawn.obj"
+".\Release\g_utils.obj"
+".\Release\game.obj"
+".\Release\gamecmds.obj"
+".\Release\gamecvars.obj"
+".\Release\gamescript.obj"
+".\Release\gibs.obj"
+".\Release\goo.obj"
+".\Release\gravpath.obj"
+".\Release\health.obj"
+".\Release\hornofconjuring.obj"
+".\Release\inventoryitem.obj"
+".\Release\ipfilter.obj"
+".\Release\item.obj"
+".\Release\level.obj"
+".\Release\light.obj"
+".\Release\listener.obj"
+".\Release\misc.obj"
+".\Release\mover.obj"
+".\Release\nature.obj"
+".\Release\navigate.obj"
+".\Release\object.obj"
+".\Release\path.obj"
+".\Release\player.obj"
+".\Release\player_combat.obj"
+".\Release\player_util.obj"
+".\Release\PlayerStart.obj"
+".\Release\portal.obj"
+".\Release\powerups.obj"
+".\Release\q_math.obj"
+".\Release\q_mathsys.obj"
+".\Release\q_shared.obj"
+".\Release\rope.obj"
+".\Release\script.obj"
+".\Release\scriptmaster.obj"
+".\Release\scriptslave.obj"
+".\Release\scriptvariable.obj"
+".\Release\sentient.obj"
+".\Release\shield.obj"
+".\Release\soulsucker.obj"
+".\Release\soundman.obj"
+".\Release\spawners.obj"
+".\Release\specialfx.obj"
+".\Release\Spit.obj"
+".\Release\steering.obj"
+".\Release\str.obj"
+".\Release\sword.obj"
+".\Release\trigger.obj"
+".\Release\vehicle.obj"
+".\Release\viewthing.obj"
+".\Release\weapon.obj"
+".\Release\weaputils.obj"
+".\Release\win_bounds.obj"
+".\Release\worldspawn.obj"
+".\Release\CTF_DeadBody.obj"
+".\Release\ctf_flag.obj"
+".\Release\ctf_global.obj"
+".\Release\CTF_InventoryItem.obj"
+".\Release\ctf_itemspawner.obj"
+".\Release\ctf_manager.obj"
+".\Release\CTF_Obituary.obj"
+".\Release\ctf_player.obj"
+".\Release\CTF_PlayerStart.obj"
+".\Release\CTF_TargetGive.obj"
+".\Release\CTF_TargetLocation.obj"
+".\Release\CTF_Team.obj"
+".\Release\CTF_Tech.obj"
+".\Release\ItemSpawner.obj"
+".\Release\OtherVoteCommands.obj"
+".\Release\Vote.obj"
+".\Release\VoteCommand.obj"
+".\Release\VoteCommandFactory.obj"
+]
+Creating command line "xilink6.exe @C:\DOCUME~1\Wilka\LOCALS~1\Temp\RSP5E.tmp"
+<h3>Output Window</h3>
+Compiling...
+actor.cpp
+ammo.cpp
+animate.cpp
+archive.cpp
+armor.cpp
+beam.cpp
+behavior.cpp
+bg_misc.c
+bg_pmove.c
+bspline.cpp
+camera.cpp
+characterstate.cpp
+class.cpp
+clusterbomb.cpp
+crossbow.cpp
+debuglines.cpp
+decals.cpp
+dm_manager.cpp
+doors.cpp
+earthquake.cpp
+edenwater.cpp
+entity.cpp
+explosion.cpp
+flamethrower.cpp
+flashbang.cpp
+g_main.cpp
+g_phys.cpp
+g_spawn.cpp
+g_utils.cpp
+game.cpp
+gamecmds.cpp
+gamecvars.cpp
+gamescript.cpp
+gibs.cpp
+goo.cpp
+gravpath.cpp
+health.cpp
+hornofconjuring.cpp
+inventoryitem.cpp
+ipfilter.cpp
+item.cpp
+level.cpp
+light.cpp
+listener.cpp
+misc.cpp
+mover.cpp
+nature.cpp
+navigate.cpp
+object.cpp
+path.cpp
+player.cpp
+player_combat.cpp
+player_util.cpp
+PlayerStart.cpp
+portal.cpp
+powerups.cpp
+q_math.c
+q_mathsys.c
+q_shared.c
+rope.cpp
+script.cpp
+scriptmaster.cpp
+scriptslave.cpp
+scriptvariable.cpp
+sentient.cpp
+shield.cpp
+soulsucker.cpp
+soundman.cpp
+spawners.cpp
+specialfx.cpp
+Spit.cpp
+steering.cpp
+str.cpp
+sword.cpp
+trigger.cpp
+vehicle.cpp
+viewthing.cpp
+weapon.cpp
+weaputils.cpp
+win_bounds.cpp
+worldspawn.cpp
+CTF_DeadBody.cpp
+ctf_flag.cpp
+ctf_global.cpp
+CTF_InventoryItem.cpp
+ctf_itemspawner.cpp
+ctf_manager.cpp
+CTF_Obituary.cpp
+ctf_player.cpp
+CTF_PlayerStart.cpp
+CTF_TargetGive.cpp
+CTF_TargetLocation.cpp
+CTF_Team.cpp
+CTF_Tech.cpp
+ItemSpawner.cpp
+OtherVoteCommands.cpp
+Vote.cpp
+VoteCommand.cpp
+VoteCommandFactory.cpp
+F:\Microsoft Visual Studio\VC98\INCLUDE\map(57) : warning C4786: 'std::map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &),std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)> >::map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &),std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)> >' : identifier was truncated to '255' characters in the debug information
+F:\Microsoft Visual Studio\VC98\INCLUDE\xtree(236) : warning C4786: 'std::_Tree<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)>,std::map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &),std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)> >::_Kfn,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)> >::insert' : identifier was truncated to '255' characters in the debug information
+F:\Microsoft Visual Studio\VC98\INCLUDE\xtree(374) : warning C4786: 'std::_Tree<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)>,std::map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &),std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)> >::_Kfn,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)> >::erase' : identifier was truncated to '255' characters in the debug information
+F:\Microsoft Visual Studio\VC98\INCLUDE\utility(21) : warning C4786: 'std::pair<std::_Tree<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)>,std::map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &),std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)> >::_Kfn,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)> >::iterator,bool>::pair<std::_Tree<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)>,std::map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &),std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<VoteCommand::Default *
+ (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic' : identifier was truncated to '255' characters in the debug information
+F:\Microsoft Visual Studio\VC98\INCLUDE\xtree(363) : warning C4786: 'std::_Tree<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)>,std::map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &),std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)> >::_Kfn,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)> >::erase' : identifier was truncated to '255' characters in the debug information
+F:\Microsoft Visual Studio\VC98\INCLUDE\xtree(402) : warning C4786: 'std::_Tree<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)>,std::map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &),std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)> >::_Kfn,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)> >::lower_bound' : identifier was truncated to '255' characters in the debug information
+F:\Microsoft Visual Studio\VC98\INCLUDE\xtree(454) : warning C4786: 'std::_Tree<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)>,std::map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &),std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)> >::_Kfn,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)> >::_Erase' : identifier was truncated to '255' characters in the debug information
+F:\Microsoft Visual Studio\VC98\INCLUDE\xtree(512) : warning C4786: 'std::_Tree<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)>,std::map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &),std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)> >::_Kfn,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)> >::_Insert' : identifier was truncated to '255' characters in the debug information
+F:\Microsoft Visual Studio\VC98\INCLUDE\xtree(522) : warning C4786: 'std::_Tree<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)>,std::map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &),std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)> >::_Kfn,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)> >::_Lbound' : identifier was truncated to '255' characters in the debug information
+F:\Microsoft Visual Studio\VC98\INCLUDE\xtree(102) : warning C4786: 'std::_Tree<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)>,std::map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &),std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)> >::_Kfn,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)> >::const_iterator::_Dec' : identifier was truncated to '255' characters in the debug information
+F:\Microsoft Visual Studio\VC98\INCLUDE\xtree(112) : warning C4786: 'std::_Tree<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)>,std::map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &),std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)> >::_Kfn,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<VoteCommand::Default * (__cdecl*)(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)> >::const_iterator::_Inc' : identifier was truncated to '255' characters in the debug information
+Spawn Time 5:10.4
+Linking...
+   Creating library ./Release/gamex86.lib and object ./Release/gamex86.exp
+Spawn Time 1:12.2
+
+
+
+<h3>Results</h3>
+gamex86.dll - 0 error(s), 11 warning(s)
+Build Time 7:23.7
+</pre>
+</body>
+</html>

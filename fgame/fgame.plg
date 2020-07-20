@@ -1,0 +1,72 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: cgame - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\Wilka\LOCALS~1\Temp\RSP69.tmp" with contents
+[
+/nologo /base:"0x30000000" /subsystem:windows /dll /incremental:no /pdb:"Release/cgamex86.pdb" /map:"Release/cgamex86.map" /machine:I386 /def:".\cgame.def" /out:"d:\games\fakk2\ctf\cgamex86.dll" /implib:"Release/cgamex86.lib" 
+".\Release\bg_misc.obj"
+".\Release\bg_pmove.obj"
+".\Release\cg_beam.obj"
+".\Release\cg_commands.obj"
+".\Release\cg_consolecmds.obj"
+".\Release\cg_drawtools.obj"
+".\Release\cg_ents.obj"
+".\Release\cg_lightstyles.obj"
+".\Release\cg_main.obj"
+".\Release\cg_marks.obj"
+".\Release\cg_modelanim.obj"
+".\Release\cg_player.obj"
+".\Release\cg_playerstate.obj"
+".\Release\cg_predict.obj"
+".\Release\cg_servercmds.obj"
+".\Release\cg_snapshot.obj"
+".\Release\cg_sound.obj"
+".\Release\cg_specialfx.obj"
+".\Release\cg_swipe.obj"
+".\Release\cg_testemitter.obj"
+".\Release\cg_ui.obj"
+".\Release\cg_view.obj"
+".\Release\class.obj"
+".\Release\listener.obj"
+".\Release\q_math.obj"
+".\Release\q_mathsys.obj"
+".\Release\q_shared.obj"
+".\Release\script.obj"
+".\Release\str.obj"
+".\Release\win_bounds.obj"
+".\Release\cg_ctf_view.obj"
+".\Release\ctf_2d.obj"
+".\Release\ctf_cg_drawtools.obj"
+".\Release\CTF_ItemPickup.obj"
+".\Release\ctf_msg.obj"
+".\Release\ctf_reward.obj"
+".\Release\ctf_tech.obj"
+]
+Creating command line "link.exe @C:\DOCUME~1\Wilka\LOCALS~1\Temp\RSP69.tmp"
+<h3>Output Window</h3>
+Linking...
+   Creating library Release/cgamex86.lib and object Release/cgamex86.exp
+Spawn Time 0:05.8
+
+
+
+<h3>Results</h3>
+cgamex86.dll - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: fgame - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+
+
+
+<h3>Results</h3>
+gamex86.dll - 0 error(s), 0 warning(s)
+Build Time 0:14.0
+</pre>
+</body>
+</html>
