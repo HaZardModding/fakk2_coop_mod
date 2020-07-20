@@ -76,8 +76,8 @@
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>.\Debug\</OutDir>
-    <IntDir>.\Debug\</IntDir>
+    <OutDir>E:\_TEMP_\fakk2_coop\Debug\</OutDir>
+    <IntDir>E:\_TEMP_\fakk2_coop\Debug\</IntDir>
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -185,11 +185,11 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <PreprocessorDefinitions>_DEBUG;WIN32;_WINDOWS;CGAME_DLL;__STL_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <AssemblerListingLocation>E:\_TEMP_\fakk2_coop\Debug\</AssemblerListingLocation>
       <BrowseInformation>true</BrowseInformation>
-      <PrecompiledHeaderOutputFile>.\Debug\cgame.pch</PrecompiledHeaderOutputFile>
-      <ObjectFileName>.\Debug\</ObjectFileName>
-      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>E:\_TEMP_\fakk2_coop\Debug\cgame.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>E:\_TEMP_\fakk2_coop\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>E:\_TEMP_\fakk2_coop\Debug\</ProgramDataBaseFileName>
     </ClCompile>
     <Midl>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -205,7 +205,7 @@
     </ResourceCompile>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>.\Debug\cgame.bsc</OutputFile>
+      <OutputFile>E:\_TEMP_\fakk2_coop\Debug\cgame.bsc</OutputFile>
     </Bscmake>
     <Link>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -213,8 +213,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <OutputFile>d:\games\fakk2\ctf\cgamex86.dll</OutputFile>
-      <ImportLibrary>.\Debug\cgamex86.lib</ImportLibrary>
+      <OutputFile>d:\games\fakk2\coop\cgamex86.dll</OutputFile>
+      <ImportLibrary>E:\_TEMP_\fakk2_coop\Debug\cgamex86.lib</ImportLibrary>
       <BaseAddress>0x30000000</BaseAddress>
       <ModuleDefinitionFile>.\cgame.def</ModuleDefinitionFile>
     </Link>

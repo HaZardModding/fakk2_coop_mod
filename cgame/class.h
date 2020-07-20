@@ -393,10 +393,20 @@ class SafePtr : public SafePtrBase
 		SafePtr& operator=( const SafePtr& obj );
 		SafePtr& operator=( T * const obj );
 
-		friend int operator==( SafePtr<T> a, T *b );
-		friend int operator!=( SafePtr<T> a, T *b );
-		friend int operator==( T *a, SafePtr<T> b );
-		friend int operator!=( T *a, SafePtr<T> b );
+		//chrissstrahl - code incompatibility fix
+		//friend int operator==( SafePtr<T> a, T *b );
+		//friend int operator!=( SafePtr<T> a, T *b );
+		//friend int operator==( T *a, SafePtr<T> b );
+		//friend int operator!=( T *a, SafePtr<T> b );
+		//
+		//// Using Code from Elite Force II - class.h
+		//
+		template<class F> friend int operator==(SafePtr<F> a, F *b);
+		template<class F> friend int operator!=(SafePtr<F> a, F *b);
+		template<class F> friend int operator==(F *a, SafePtr<F> b);
+		template<class F> friend int operator!=(F *a, SafePtr<F> b);
+		template<class F> friend int operator==(SafePtr<F> a, SafePtr<F> b);
+		template<class F> friend int operator!=(SafePtr<F> a, SafePtr<F> b);
 
       operator	T*() const;
 		T* operator->() const;
@@ -472,6 +482,11 @@ inline int operator!=
 	{
 	return a != b.ptr;
 	}
+
+//chrissstrahl - code incompatibility fix
+// see code above
+template<class T> inline int operator==(SafePtr<T> a, SafePtr<T> b) { return a.ptr == b.ptr; }
+template<class T> inline int operator!=(SafePtr<T> a, SafePtr<T> b) { return a.ptr != b.ptr; }
 
 template<class T>
 inline SafePtr<T>::operator T*() const

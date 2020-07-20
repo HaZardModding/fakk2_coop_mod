@@ -420,10 +420,12 @@ void CG_SetLightStyle( int num, const char *s )
    if ( !s )
       return;
 
-	r = strchr( s, 'R' );
-	g = strchr( s, 'G' );
-	b = strchr( s, 'B' );
-	a = strchr( s, 'A' );
+   //HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
+	//r = strchr( s, 'R' ); - !more occurences fixed!
+	r = strchr( (char*)s, 'R' );
+	g = strchr((char*)s, 'G' );
+	b = strchr((char*)s, 'B' );
+	a = strchr((char*)s, 'A' );
 
    n = 0;
    if (r)

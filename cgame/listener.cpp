@@ -961,7 +961,9 @@ void EventArgDef::Setup
       while( 1 )
          {
          // find opening '['
-         tokptr = strchr( ptr, '[' );
+		//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
+        //tokptr = strchr( ptr, '[' );
+         tokptr = strchr( (char*)ptr, '[' );
          if ( !tokptr )
             {
             break;
@@ -2180,7 +2182,10 @@ Event::Event
    // suppress it if it starts with '_'
 	if ( documentation && ( command[ 0 ] != '_' ) )
       {
-		eventDefList->AddObject( ( Event * )this );
+		//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
+		//eventDefList->AddObject( ( Event * )this );
+		Event *event = this;
+		eventDefList->AddObject( event );
       }
    else
       {
@@ -2577,8 +2582,10 @@ void Event::Archive
 
 CLASS_DECLARATION( Class, Listener, NULL )
 	{
-	   { &EV_Remove,				Listener::Remove },
-		{ &EV_ScriptRemove,		Listener::ScriptRemove },
+	//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
+	//{ &EV_Remove,				Listener::Remove }, -fixed multiple occurences
+		{ &EV_Remove,			&Listener::Remove },
+		{ &EV_ScriptRemove,		&Listener::ScriptRemove },
 		{ NULL, NULL }
 	};
 

@@ -535,7 +535,9 @@ bool DrawScoreboard(bool forceDraw = false)
 	int num = 0;
 	int red = 0;
 	int blue = 0;
-	for(i=0; i<MAX_CLIENTS; ++i)
+	//HZM Coop Mod Chrissstrahl - Code Compatibilty Fix
+	//for(i=0; i<MAX_CLIENTS; ++i)
+	for(int i=0; i<MAX_CLIENTS; ++i)
 	{
 		if(cgs.clientinfo[i].team == TEAM_RED)
 			++red;
