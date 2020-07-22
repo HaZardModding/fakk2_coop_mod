@@ -1,0 +1,14 @@
+*.log
+**/debug
+**/logs
+**/ipch
+**/relase
+*.vss
+**/.vs
+*.vcxproj.user
+*.opt
+*.sdf
+*.suo
+*.dsw
+*.opensdf
+*.ncb
